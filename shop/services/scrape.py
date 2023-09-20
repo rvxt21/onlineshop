@@ -28,51 +28,6 @@ excluded_links = {
 }
 
 
-# def upload_images_to_local_media(images: list[str], product: Product) -> None:
-#     for i, image in enumerate(images, start=1):
-#         with requests.Session() as session:
-#             response = session.get(image)
-#             assert response.status_code == HTTPStatus.OK, 'Wrong status code'
-#
-#         with open(f'media/images/product/{product.slug}-{i}.jpg', 'wb') as file:
-#             file.write(response.content)
-#
-#         Image.objects.create(
-#             product=product,
-#             image=f'images/product/{product.slug}-{i}.jpg',
-#             url=image,
-#         )
-
-
-# def write_to_db(data: dict) -> Any:
-#     product, _ = Product.objects.get_or_create(
-#         slug=f"{slugify(anyascii(data['Title']))}-{data['Url'].split('/')[-1]}",
-#         defaults={
-#             'title': data['Title'],
-#             'description': data['Description'][0]
-#             if data['Description'] else None,
-#             'price': data['Price'],
-#             'old_price': data['Old price'],
-#             'discount': data['Discount'],
-#             'source_url': data['Url'],
-#
-#         }
-#     )
-#     for category in data['Categories']:
-#         category, _ = Category.objects.get_or_create(
-#             slug=slugify(anyascii(category)),
-#             defaults={
-#                 'name': category,
-#             }
-#         )
-#         product.categories.add(category)
-#
-#     if data['Images']:
-#         upload_images_to_local_media(data['Images'], product)
-#
-#     logger.warning('Product %s saved', product.slug)
-
-
 def get_response_result(url: str) -> str:
     with Session() as session:
         response = session.get(url=url)
@@ -174,45 +129,33 @@ def test_collect_products_data(url: str) -> None:
                   if link not in excluded_links}
     else:
         images = None
-
+    sizes = tree.css('ul.sku-prop-values-list li.sku-prop-value')
+    if sizes and len(sizes)>0:
+        sizes = [s.text(strip=True) for s in sizes]
+    else:
+        sizes = None
+    brand_image = tree.css_first('div.brand-detail img')
+    if brand_image:
+        brand_image_link = f'https://tennismag.com.ua{brand_image.attributes.get("data-src")}'
+    else:
+        brand_image_link = None
+    brand_name = characteristics.get('Бренд')
     data = {
             'Title': name,
             'Categories': categories,
             'Description': description,
             'Characteristics': characteristics,
+            'Sizes': sizes,
             'Price': price,
             'Product article': product_article,
             'Old price': old_price,
             'Discount': discount,
             'Images': images,
+            'Brand Image': brand_image_link,
+            'Brand name': brand_name,
             'Url': url
-
         }
     print(data)
-
-
-# def worker(qu: Queue, session: requests.Session) -> None:
-#     while not qu.empty():
-#         url = qu.get()
-#         logger.info('Working on %s, queue size=%s', url, qu.qsize())
-#         try:
-#             response = session.get(url=url, timeout=10)
-#             assert response.status_code == HTTPStatus.OK, 'Wrong status code'
-#             data = parse_products_data(response.text, url)
-#             with lock:
-#                 write_to_db(data)
-#         except (
-#                 requests.exceptions.ConnectionError,
-#                 requests.exceptions.ReadTimeout,
-#                 requests.exceptions.Timeout,
-#                 requests.exceptions.TooManyRedirects,
-#                 requests.exceptions.RequestException,
-#                 AssertionError,
-#         ) as error:
-#             logger.warning('%s, url %s', error, url)
-#             qu.put(url)
-#         except Exception as error:
-#             logger.exception('Url %s %s', url, error)
 
 
 def get_product_links_from_sitemap(url: str) -> list[str]:
@@ -237,15 +180,9 @@ def main():
     # site_map_url = 'https://tennismag.com.ua/sitemap_iblock_10.xml'
     # product_links = get_product_links_from_sitemap(site_map_url)
     # logger.info('Number of products found %s', len(product_links))
-    # session = requests.Session()
-    # queue = Queue()
-    # for link in product_links[1: 200]:
-    #     queue.put(link)
-    #
-    # with ThreadPoolExecutor(max_workers=10) as executor:
-    #     for _ in range(10):
-    #         executor.submit(worker, queue, session)
-    test_collect_products_data('https://tennismag.com.ua/ua/catalog/zhenskie-krossovki-nike/tennisnye-krossovki-nike-zoom-gp-turbo-hc-osaka/?offer=59242')
+
+    test_collect_products_data('https://tennismag.com.ua/ua/catalog/odezhda-zhenskaya/mayka-babolat-tank-match-core/?offer=3820')
+
 
 if __name__ == '__main__':
     main()
