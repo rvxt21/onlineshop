@@ -1,6 +1,6 @@
 from time import perf_counter
 from django.core.management.base import BaseCommand, CommandError
-from shop.services.scrape import main
+from shop.services.scrapper import main
 
 
 class Command(BaseCommand):
