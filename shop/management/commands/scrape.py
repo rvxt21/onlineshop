@@ -8,9 +8,9 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         try:
-            # t1 = perf_counter()
+            t1 = perf_counter()
             main()
-            # print(f'Time: {perf_counter() - t1:.2f} seconds')
+            print(f'Time: {perf_counter() - t1:.2f} seconds')
         except Exception as error:
             raise CommandError('Scrapping error %s', error)
         self.stdout.write(self.style.SUCCESS('Parser finished!'))
