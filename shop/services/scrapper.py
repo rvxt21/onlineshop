@@ -28,6 +28,21 @@ excluded_links = {
     'https://tennismag.com.ua/upload/alexkova.rklite/321/321faad204f6838837d46fae9e1673bf.jpg',
     'https://tennismag.com.ua/upload/alexkova.rklite/de9/de9f20a49b50901fd11d821ab4291466.jpg'
 }
+excluded_url = {'https://tennismag.com.ua/catalog/sumki-solinco/',
+    'https://tennismag.com.ua/ua/catalog/raketki-yonex/ ',
+    'https://tennismag.com.ua/ua/catalog/dlya-korta-setki/',
+    'https://tennismag.com.ua/catalog/nalobnik/',
+    'https://tennismag.com.ua/catalog/perchatki/',
+    'https://tennismag.com.ua/catalog/ochki/',
+    'https://tennismag.com.ua/catalog/raznoe/',
+    'https://tennismag.com.ua/catalog/oborudovanie-dlya-fitnesa/',
+    'https://tennismag.com.ua/catalog/fitnes/',
+    'https://tennismag.com.ua/catalog/myachi-dlya-fitnesa/',
+    'https://tennismag.com.ua/catalog/nabory-dlya-fitnesa/',
+    'https://tennismag.com.ua/catalog/roliki-dlya-pressa/',
+    'https://tennismag.com.ua/catalog/skakalki/',
+    'https://tennismag.com.ua/catalog/step-platformy/',
+    'https://tennismag.com.ua/catalog/upory-dlya-otzhimaniy/'}
 
 
 def upload_images_to_local_media(images: list[str], product: Product) -> None:
@@ -36,12 +51,12 @@ def upload_images_to_local_media(images: list[str], product: Product) -> None:
             response = session.get(image)
             assert response.status_code == HTTPStatus.OK, 'Wrong status code'
 
-        with open(f'media/img/product/{product.slug}-{i}.jpg', 'wb') as file:
+        with open(f'media/images/product/{product.slug}-{i}.jpg', 'wb') as file:
             file.write(response.content)
 
         Image.objects.create(
             product=product,
-            image=f'img/product/{product.slug}-{i}.jpg',
+            image=f'images/product/{product.slug}-{i}.jpg',
             url=image,
         )
 
@@ -51,7 +66,7 @@ def upload_brand_logo_to_local_media(logo: str, brand: Brand) -> None:
         response = session.get(logo)
         assert response.status_code == HTTPStatus.OK, 'Wrong status code'
 
-    file_name = f'brand/{slugify(anyascii(brand.name))}.jpg'
+    file_name = f'brands/{slugify(anyascii(brand.name))}.jpg'
     brand.logo = file_name
     brand.save()
 
@@ -81,8 +96,7 @@ def write_to_db(data: dict) -> None:
         slug=f"{slugify(anyascii(data['Title']))}-{data['Url'].split('/')[-1]}",
         defaults={
             'title': data['Title'],
-            'description': data['Description'][0]
-            if data['Description'] else None,
+            # 'description': data['Description'] if data['Description'] else None,
             'price': data['Price'],
             'old_price': data['Old price'],
             'discount': data['Discount'],
@@ -91,6 +105,11 @@ def write_to_db(data: dict) -> None:
             'brand': brand,
         }
     )
+    if not _:
+        product.description = data['Description'] if \
+            data['Description'] else None
+
+    product.save()
     for category in data['Categories']:
         category, _ = Category.objects.get_or_create(
             slug=slugify(anyascii(category)),
@@ -102,6 +121,7 @@ def write_to_db(data: dict) -> None:
 
     if data['Characteristics']:
         product.characteristics = data['Characteristics']
+        product.save()
 
     if data['Sizes']:
         for size_name in data['Sizes']:
@@ -281,7 +301,7 @@ def get_product_links_from_sitemap(url: str) -> list[str]:
 
     tree = HTMLParser(response.text)
     loc = tree.css('loc')
-    excluded_url = 'https://tennismag.com.ua/catalog/sumki-solinco/'
+
 
     return [elem.text(strip=True).replace('https://tennismag.com.ua/catalog/',
                                           'https://tennismag.com.ua/ua/catalog/'
@@ -290,7 +310,7 @@ def get_product_links_from_sitemap(url: str) -> list[str]:
             if elem.text(strip=True).startswith(
                                             'https://tennismag.com.ua/catalog/'
                                                 )
-            and elem.text(strip=True) != excluded_url
+            and elem.text(strip=True) not in excluded_url
             ]
 
 
@@ -301,10 +321,10 @@ def main():
 
     session = requests.Session()
     queue = Queue()
-    for link in product_links[100: 500]:
+    for link in product_links[3050: 3100]:
         queue.put(link)
 
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor(max_workers=10) as executor:
         for _ in range(10):
             executor.submit(worker, queue, session)
 

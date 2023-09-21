@@ -27,7 +27,7 @@ class Size(models.Model):
 
 class Brand(models.Model):
     name = models.CharField(max_length=50)
-    logo = models.ImageField(upload_to='brands', blank=True, null=True)
+    logo = models.ImageField(upload_to='images/brand', blank=True, null=True)
 
 
 class Image(models.Model):
@@ -37,7 +37,7 @@ class Image(models.Model):
         related_name='images',
     )
     image = models.ImageField(
-        upload_to='img/product', max_length=300
+        upload_to='images/product', max_length=300
     )
     url = models.URLField(
         max_length=512, verbose_name='Image URL'
