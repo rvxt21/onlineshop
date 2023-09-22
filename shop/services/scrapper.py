@@ -11,6 +11,7 @@ from http import HTTPStatus
 from selectolax.parser import HTMLParser
 from queue import Queue
 from threading import Lock
+import logging
 
 from shop.models import Category, Product, Image, Brand, Size
 
@@ -18,16 +19,24 @@ from shop.models import Category, Product, Image, Brand, Size
 lock = Lock()
 logger = logging.getLogger(__name__)
 
+
 excluded_links = {
-    'https://tennismag.com.ua/info_green.png',
+    'https://tennismag.com.ua/upload/alexkova.rklite/008/0083db92ba3ba2b1e7c107b799c3f671.jpg',
+    'https://tennismag.com.ua/upload/alexkova.rklite/de9/de9f20a49b50901fd11d821ab4291466.jpg',
+    'https://tennismag.com.ua/upload/alexkova.rklite/82d/82dca8b5ad6be716d3b42fb178dbbe1b.jpg',
+    'https://tennismag.com.ua/upload/alexkova.rklite/9b2/9b2c836ba0f78e91b2ed3c9e39f01d53.jpg',
+    'https://tennismag.com.ua/upload/alexkova.rklite/9ea/9eae7202cc55f6029fb5ea1b20497b2f.jpg',
     'https://tennismag.com.ua/upload/alexkova.rklite/1bd/1bdc95770e91db9a83dca2c02ac8eb83.jpg',
     'https://tennismag.com.ua/upload/alexkova.rklite/448/4480cdc2141c1009062c71e496e1b84f.jpg',
-    'https://tennismag.com.ua/ua/images/tennismag_logo.png',
-    'https://tennismag.com.ua/upload/alexkova.rklite/321/321faad204f6838837d46fae9e1673bf.jpg',
-    'https://tennismag.com.ua/upload/alexkova.rklite/1bd/1bdc95770e91db9a83dca2c02ac8eb83.jpg',
-    'https://tennismag.com.ua/upload/alexkova.rklite/321/321faad204f6838837d46fae9e1673bf.jpg',
-    'https://tennismag.com.ua/upload/alexkova.rklite/de9/de9f20a49b50901fd11d821ab4291466.jpg'
+    'https://tennismag.com.ua/info_green.png', 'https://tennismag.com.ua/ua/images/tennismag_logo.png',
+    'https://tennismag.com.ua/upload/alexkova.rklite/52c/52cf27f9f8748e1add651a0dd2cce8a0.jpg',
+    'https://tennismag.com.ua/upload/alexkova.rklite/bc5/bc57ef2c2abd530bd760779e8e30763c.jpg',
+    'https://tennismag.com.ua/upload/alexkova.rklite/ee4/ee46d2b48e49b97d0eee1082ffbdc80a.jpg',
+    'https://tennismag.com.ua/upload/alexkova.rklite/9f3/9f3f656f0bdede874627a5a981c3ed6a.jpg',
+    'https://tennismag.com.ua/upload/alexkova.rklite/321/321faad204f6838837d46fae9e1673bf.jpg'
 }
+
+
 excluded_url = {'https://tennismag.com.ua/catalog/sumki-solinco/',
     'https://tennismag.com.ua/ua/catalog/raketki-yonex/ ',
     'https://tennismag.com.ua/ua/catalog/dlya-korta-setki/',
@@ -42,31 +51,38 @@ excluded_url = {'https://tennismag.com.ua/catalog/sumki-solinco/',
     'https://tennismag.com.ua/catalog/roliki-dlya-pressa/',
     'https://tennismag.com.ua/catalog/skakalki/',
     'https://tennismag.com.ua/catalog/step-platformy/',
-    'https://tennismag.com.ua/catalog/upory-dlya-otzhimaniy/'}
+    'https://tennismag.com.ua/catalog/upory-dlya-otzhimaniy/'
+                }
 
 
-def upload_images_to_local_media(images: list[str], product: Product) -> None:
+def upload_images_to_local_media(images: set[str], product: Product) -> None:
     for i, image in enumerate(images, start=1):
-        with requests.Session() as session:
-            response = session.get(image)
-            assert response.status_code == HTTPStatus.OK, 'Wrong status code'
+        logger.debug(f"Processing image {i}: {image}")
+        if image.endswith(('.jpg', '.jpeg', '.png', '.gif')):
+            with requests.Session() as session:
+                response = session.get(image)
+                assert response.status_code == HTTPStatus.OK, 'Wrong status code'
 
-        with open(f'media/images/product/{product.slug}-{i}.jpg', 'wb') as file:
-            file.write(response.content)
+            with open(f'media/images/product/{product.slug}-{i}.jpg', 'wb') as file:
+                file.write(response.content)
 
-        Image.objects.create(
-            product=product,
-            image=f'images/product/{product.slug}-{i}.jpg',
-            url=image,
-        )
-
+            Image.objects.create(
+                product=product,
+                image=f'images/product/{product.slug}-{i}.jpg',
+                url=image,
+            )
+        else:
+            logger.warning(f"Skipping invalid image URL: {image}")
 
 def upload_brand_logo_to_local_media(logo: str, brand: Brand) -> None:
     with requests.Session() as session:
         response = session.get(logo)
         assert response.status_code == HTTPStatus.OK, 'Wrong status code'
 
-    file_name = f'brands/{slugify(anyascii(brand.name))}.jpg'
+    file_name = f'images/brand/{slugify(anyascii(brand.name))}.jpg'
+    with open(f'media/{file_name}', 'wb') as file:
+        file.write(response.content)
+
     brand.logo = file_name
     brand.save()
 
@@ -96,7 +112,7 @@ def write_to_db(data: dict) -> None:
         slug=f"{slugify(anyascii(data['Title']))}-{data['Url'].split('/')[-1]}",
         defaults={
             'title': data['Title'],
-            # 'description': data['Description'] if data['Description'] else None,
+            'description': data['Description'] if data['Description'] else None,
             'price': data['Price'],
             'old_price': data['Old price'],
             'discount': data['Discount'],
@@ -166,7 +182,7 @@ def parse_products_data(html_string: str, url: str) -> dict[str, Any]:
     if images:
         image_links = [f'https://tennismag.com.ua{i.attributes["src"]}' for
                        i in images]
-        images = {link.replace(".jpg", ".jpg ") for link in image_links
+        images = {link.replace(".jpg", ".jpg")  for link in image_links
                   if link not in excluded_links}
     else:
         images = None
@@ -321,7 +337,7 @@ def main():
 
     session = requests.Session()
     queue = Queue()
-    for link in product_links[3050: 3100]:
+    for link in product_links[150: 200]:
         queue.put(link)
 
     with ThreadPoolExecutor(max_workers=10) as executor:
