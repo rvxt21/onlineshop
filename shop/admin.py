@@ -73,7 +73,7 @@ class ProductAdmin(SummernoteModelAdmin):
                 ('description',),
                 ('price', 'old_price', 'discount'),
                 ('brand',),
-                ('categories', 'colors', 'sizes'),
+                ('categories','sizes'),
                 ('characteristics',)
             )
         }),

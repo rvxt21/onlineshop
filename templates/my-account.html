@@ -1,60 +1,6 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>My Account | Malias</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<!-- favicon
-		============================================ -->		
-        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-		
-		<!-- Google Fonts
-		============================================ -->		
-       <link href='https://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
-       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-	   
-		<!-- Bootstrap CSS
-		============================================ -->		
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-		<!-- Font awesome CSS
-		============================================ -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-		<!-- owl.carousel CSS
-		============================================ -->
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <link rel="stylesheet" href="css/owl.theme.css">
-        <link rel="stylesheet" href="css/owl.transitions.css">
-		<!-- nivo slider CSS
-		============================================ -->
-		<link rel="stylesheet" href="lib/css/nivo-slider.css" type="text/css" />
-		<!-- meanmenu CSS
-		============================================ -->
-        <link rel="stylesheet" href="css/meanmenu.min.css">
-		<!-- jquery-ui CSS
-		============================================ -->
-        <link rel="stylesheet" href="css/jquery-ui.css">
-		<!-- animate CSS
-		============================================ -->
-        <link rel="stylesheet" href="css/animate.css">
-		<!-- main CSS
-		============================================ -->
-        <link rel="stylesheet" href="css/main.css">
-		<!-- style CSS
-		============================================ -->
-        <link rel="stylesheet" href="style.css">
-		<!-- responsive CSS
-		============================================ -->
-        <link rel="stylesheet" href="css/responsive.css">
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
+{%extends 'base.html' %}
+{% load static %}
+{% block main %}
 
 		<!-- HEADER-AREA START -->
 		<header class="header-area">
@@ -66,11 +12,11 @@
 							<div class="top-menu">
 								<!-- Start Language -->
 								<ul class="language">
-									<li><a href="#"><img class="right-5" src="img/flags/gb.png" alt="#">English<i class="fa fa-caret-down left-5"></i></a>
+									<li><a href="#"><img class="right-5" src="{% static 'img/flags/gb.png' %}" alt="#">English<i class="fa fa-caret-down left-5"></i></a>
 										<ul>
-											<li><a href="#"><img class="right-5" src="img/flags/fr.png" alt="#">French</a></li>
-											<li><a href="#"><img class="right-5" src="img/flags/gb.png" alt="#">English</a></li>
-											<li><a href="#"><img class="right-5" src="img/flags/gb.png" alt="#">English</a></li>
+											<li><a href="#"><img class="right-5" src="{% static 'img/flags/fr.png' %}" alt="#">French</a></li>
+											<li><a href="#"><img class="right-5" src="{% static 'img/flags/gb.png' %}" alt="#">English</a></li>
+											<li><a href="#"><img class="right-5" src="{% static 'img/flags/gb.png' %}" alt="#">English</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -162,7 +108,7 @@
 					<div class="row">
 						<div class="col-lg-3 col-md-12">
 							<div class="logo">
-								<a href="index.html" title="Malias"><img src="img/logo.png" alt="Malias"></a>
+								<a href="index.html" title="Malias"><img src="{% static 'img/logo.png' %}" alt="Malias"></a>
 							</div>
 						</div>
 						<div class="col-lg-9 col-md-12">
@@ -210,7 +156,7 @@
 											<div class="mini-cart-content">
 												<div class="cart-img-details">
 													<div class="cart-img-photo">
-														<a href="#"><img src="img/product/total-cart.jpg" alt="#"></a>
+														<a href="#"><img src="{% static 'img/product/total-cart.jpg' %}" alt="#"></a>
 													</div>
 													<div class="cart-img-content">
 														<a href="#"><h4>Prod Aldults</h4></a>
@@ -226,7 +172,7 @@
 												<div class="clear"></div>
 												<div class="cart-img-details">
 													<div class="cart-img-photo">
-														<a href="#"><img src="img/product/total-cart2.jpg" alt="#"></a>
+														<a href="#"><img src="{% static 'img/product/total-cart2.jpg' %}" alt="#"></a>
 													</div>
 													<div class="cart-img-content">
 														<a href="#"><h4>Fact Prone</h4></a>
@@ -484,7 +430,7 @@
 	                                                </ul>
 	                                            </div>
 	                                            <div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
-	                                            	<a href="#"><img src="img/megamenu/vmega_blog1.jpg" alt="Product"></a>
+	                                            	<a href="#"><img src="{% static 'img/megamenu/vmega_blog1.jpg' %}" alt="Product"></a>
 	                                            </div>
 	                                        </div>
 	                                        <!-- MEGA MENU END -->
@@ -530,7 +476,7 @@
 							<div class="row">
 								<div class="col-12">
 									<div class="banner">
-										<a href="#"><img src="img/banner/12.jpg" alt="Product Banner"></a>
+										<a href="#"><img src="{% static 'img/banner/12.jpg' %}" alt="Product Banner"></a>
 									</div>
 								</div>
 							</div>
@@ -779,7 +725,7 @@
 															<tbody>
 																<tr>
 																	<td class="text-center">
-																		<a href="#"><img class="img-thumbnail" src="img/product/cart/1.jpg" alt="#" /></a>
+																		<a href="#"><img class="img-thumbnail" src="{% static 'img/product/cart/1.jpg' %}" alt="#" /></a>
 																	</td>
 																	<td class="text-left">
 																		<a href="#">More-Or-Less</a>
@@ -803,7 +749,7 @@
 																</tr>
 																<tr>
 																	<td class="text-center">
-																		<a href="#"><img class="img-thumbnail" src="img/product/cart/2.jpg" alt="#" /></a>
+																		<a href="#"><img class="img-thumbnail" src="{% static 'img/product/cart/2.jpg' %}" alt="#" /></a>
 																	</td>
 																	<td class="text-left">
 																		<a href="#">More-Or-Less</a>
@@ -965,7 +911,7 @@
 															<tbody>
 																<tr>
 																	<td class="text-center">
-																		<a href="#"><img src="img/product/cart/3.jpg" alt="#" /></a>
+																		<a href="#"><img src="{% static 'img/product/cart/3.jpg' %}" alt="#" /></a>
 																	</td>
 																	<td class="text-left">
 																		<a href="#">Prod Aldults</a>
@@ -988,7 +934,7 @@
 																</tr>
 																<tr>
 																	<td class="text-center">
-																		<a href="#"><img src="img/product/cart/4.jpg" alt="#" /></a>
+																		<a href="#"><img src="{% static 'img/product/cart/4.jpg' %}" alt="#" /></a>
 																	</td>
 																	<td class="text-left">
 																		<a href="#">Prod Aldults</a>
@@ -1053,47 +999,47 @@
                         <div class="active-brand-logo">
                             <div class="col-lg-12">
                                 <div class="single-brand-logo">
-                                    <a href="#"><img src="img/brand/1.png" alt=""></a>
+                                    <a href="#"><img src="{% static 'img/brand/1.png' %}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="single-brand-logo">
-                                    <a href="#"><img src="img/brand/2.png" alt=""></a>
+                                    <a href="#"><img src="{% static 'img/brand/2.png' %}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="single-brand-logo">
-                                    <a href="#"><img src="img/brand/3.png" alt=""></a>
+                                    <a href="#"><img src="{% static 'img/brand/3.png' %}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="single-brand-logo">
-                                    <a href="#"><img src="img/brand/4.png" alt=""></a>
+                                    <a href="#"><img src="{% static 'img/brand/4.png' %}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="single-brand-logo">
-                                    <a href="#"><img src="img/brand/5.png" alt=""></a>
+                                    <a href="#"><img src="{% static 'img/brand/5.png' %}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="single-brand-logo">
-                                    <a href="#"><img src="img/brand/6.png" alt=""></a>
+                                    <a href="#"><img src="{% static 'img/brand/6.png' %}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="single-brand-logo">
-                                    <a href="#"><img src="img/brand/1.png" alt=""></a>
+                                    <a href="#"><img src="{% static 'img/brand/1.png' %}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="single-brand-logo">
-                                    <a href="#"><img src="img/brand/2.png" alt=""></a>
+                                    <a href="#"><img src="{% static 'img/brand/2.png' %}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="single-brand-logo">
-                                    <a href="#"><img src="img/brand/3.png" alt=""></a>
+                                    <a href="#"><img src="{% static 'img/brand/3.png' %}" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -1209,7 +1155,7 @@
 							<div class="copyright">
 								<p>Copyright &copy; <a href="http://bootexperts.com/" target="_blank"> BootExpert</a> All rights reserved.</p>
 								<div class="payment">
-									<a href="#"><img src="img/payment.png" alt="Payment"></a>
+									<a href="#"><img src="{% static 'img/payment.png' %}" alt="Payment"></a>
 								</div>
 							</div>
 						</div>
@@ -1219,47 +1165,4 @@
 			<!-- Copyright-area End -->
 		</footer>
 		<!-- FOOTER-AREA END -->
-        
-
-		<!-- jquery
-		============================================ -->		
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-        <script src="js/vendor/jquery-1.12.4.min.js"></script>
-		<!-- popper JS
-		============================================ -->		
-        <script src="js/popper.min.js"></script>
-		<!-- bootstrap JS
-		============================================ -->		
-        <script src="js/bootstrap.min.js"></script>
-		<!-- wow JS
-		============================================ -->		
-        <script src="js/wow.min.js"></script>
-		<!-- meanmenu JS
-		============================================ -->		
-        <script src="js/jquery.meanmenu.js"></script>
-		<!-- owl.carousel JS
-		============================================ -->		
-        <script src="js/owl.carousel.min.js"></script>
-		<!-- scrollUp JS
-		============================================ -->		
-        <script src="js/jquery.scrollUp.min.js"></script>
-        <!-- countdon.min JS
-		============================================ -->		
-        <script src="js/countdon.min.js"></script>
-        <!-- jquery-price-slider js
-		============================================ --> 
-        <script src="js/jquery-price-slider.js"></script>
-        <!-- Nivo slider js
-		============================================ --> 		
-		<script src="lib/js/jquery.nivo.slider.js" type="text/javascript"></script>
-		<!-- Image zoom js
-		============================================ --> 		
-		<script src="js/jquery.zoom.min.js"></script>
-		<!-- plugins JS
-		============================================ -->		
-        <script src="js/plugins.js"></script>
-		<!-- main JS
-		============================================ -->		
-        <script src="js/main.js"></script>
-    </body>
-</html>
+{% endblock main %}

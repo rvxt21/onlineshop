@@ -337,7 +337,7 @@ def main():
 
     session = requests.Session()
     queue = Queue()
-    for link in product_links[150: 200]:
+    for link in product_links[2200: 2300]:
         queue.put(link)
 
     with ThreadPoolExecutor(max_workers=10) as executor:
