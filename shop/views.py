@@ -25,5 +25,21 @@ def product(request):
 
 def brand_logo(request):
     brands = Brand.objects.distinct()
+    print(brands)
     context = {'brands': brands}
     return render(request, 'brands-logo.html', context)
+
+
+def contact(request):
+    context = {}
+    return render(request, 'contact.html', context=context)
+
+
+def create_account(request):
+    context = {}
+    return render(request, 'account.html', context=context)
+
+
+def about(request):
+    context = {}
+    return render(request, 'about.html', context=context)

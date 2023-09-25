@@ -19,7 +19,7 @@
                             <!-- End Language -->
                             <!-- Start Currency -->
                             <ul class="currency">
-                                <li><a href="#"><strong>$</strong> USD<i class="fa fa-caret-down left-5"></i></a>
+                                <li><a href="#"><strong>₴</strong> UAH<i class="fa fa-caret-down left-5"></i></a>
                                     <ul>
                                         <li><a href="#">$ EUR</a></li>
                                         <li><a href="#">$ GBP</a></li>
@@ -28,13 +28,13 @@
                                 </li>
                             </ul>
                             <!-- End Currency -->
-                            <p class="welcome-msg">Default welcome msg!</p>
+                            <p class="welcome-msg">Вітаємо на нашому сайті!</p>
                         </div>
                         <!-- Start Top-Link -->
                         <div class="top-link">
                             <ul class="link">
-                                <li><a href="my-account.html"><i class="fa fa-user"></i> My Account</a></li>
-                                <li><a href="wishlist.html"><i class="fa fa-heart"></i> Wish List (0)</a></li>
+                                <li><a href="my-account.html"><i class="fa fa-user"></i> Мій аккаунт</a></li>
+                                <li><a href="wishlist.html"><i class="fa fa-heart"></i> Список бажань (0)</a></li>
                                 <li><a href="checkout.html"><i class="fa fa-share"></i> Checkout</a></li>
                                 <li><a href="account.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
                             </ul>
@@ -55,10 +55,10 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="single-support">
                                 <div class="support-content">
-                                    <i class="fa fa-clock-o"></i>
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
                                     <div class="support-text">
-                                        <h1 class="zero gfont-1">working time</h1>
-                                        <p>Mon- Sun: 8.00 - 18.00</p>
+                                        <h1 class="zero gfont-1">Час роботи</h1>
+                                        <p>Понеділок - Субота: 8.00 - 18.00</p>
                                     </div>
                                 </div>
                             </div>
@@ -91,8 +91,8 @@
                             <div class="single-support">
                                 <i class="fa fa-phone-square"></i>
                                 <div class="support-text">
-                                    <h1 class="zero gfont-1">Phone: 0123456789</h1>
-                                    <p>Order Online Now !</p>
+                                    <h1 class="zero gfont-1">Номер телефону: +380(50)-000-00-00</h1>
+                                    <p>Замовляй Онлайн зараз!</p>
                                 </div>
                             </div>
                         </div>
@@ -104,15 +104,16 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-12">
                         <div class="logo">
-                            <a href="index.html" title="Malias"><img src="{% static 'img/logo.png' %}" alt="Malias"></a>
+                            <a href="index.html" title="Malias"><img src="https://tennismag.com.ua/images/tennismag_logo.png" alt="Tennis shop"></a>
                         </div>
                     </div>
+
                     <div class="col-lg-9 col-md-12">
                         <div class="quick-access">
                   <div class="search-by-category">
                         <div class="search-container">
                             <select id="category-select">
-                                <option class="all-cate">All Categories</option>
+                                <option class="all-cate">Всі категорії</option>
                                 {% for category in categories %}
                                 <option class="cate-item-head" value="{% url 'catalog' category.slug %}">{{ category.name }}</option>
                                 {% endfor %}
@@ -209,13 +210,9 @@
                         <div class="mainmenu d-lg-block d-none">
                             <nav>
                                 <ul>
-                                    <li><a href="index.html">Home</a>
-                                        <ul>
-                                            <li><a href="index.html">Home Versions 1</a></li>
-                                            <li><a href="index.html">Home Versions 2</a></li>
-                                        </ul>
+                                    <li><a href="{% url 'index' %}">Home</a>
                                     </li>
-                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="{% url 'about' %}">About Us</a></li>
                                     <li class="hot"><a href="shop.html">Bestseller Products</a></li>
                                     <li class="new"><a href="shop-list.html">New Products</a></li>
                                     <li><a href="shop.html">Special Products</a></li>

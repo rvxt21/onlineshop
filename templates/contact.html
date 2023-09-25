@@ -153,7 +153,7 @@
 	                                                </ul>
 	                                            </div>
 	                                            <div class="cat-left-drop-menu-left cat-left-drop-menu-photo">
-	                                            	<a href="#"><img src="img/megamenu/vmega_blog1.jpg" alt="Product"></a>
+	                                            	<a href="#"><img src="{% static 'img/megamenu/vmega_blog1.jpg' %}" alt="Product"></a>
 	                                            </div>
 	                                        </div>
 	                                        <!-- MEGA MENU END -->
@@ -208,7 +208,7 @@
 										<div class="single-product">
 											<div class="product-img">
 												<a href="#">
-													<img class="primary-img" src="img/product/small/1.jpg" alt="Product">
+													<img class="primary-img" src="{% static 'img/product/small/1.jpg' %}" alt="Product">
 												</a>
 											</div>
 											<div class="product-description">
@@ -231,7 +231,7 @@
 										<div class="single-product">
 											<div class="product-img">
 												<a href="#">
-													<img class="primary-img" src="img/product/small/2.jpg" alt="Product">
+													<img class="primary-img" src="{% static 'img/product/small/2.jpg' %}" alt="Product">
 												</a>
 											</div>
 											<div class="product-description">
@@ -254,7 +254,7 @@
 										<div class="single-product">
 											<div class="product-img">
 												<a href="#">
-													<img class="primary-img" src="img/product/small/3.jpg" alt="Product">
+													<img class="primary-img" src="{% static 'img/product/small/3.jpg' %}" alt="Product">
 												</a>
 											</div>
 											<div class="product-description">
@@ -277,7 +277,7 @@
 										<div class="single-product">
 											<div class="product-img">
 												<a href="#">
-													<img class="primary-img" src="img/product/small/4.jpg" alt="Product">
+													<img class="primary-img" src="{% static 'img/product/small/4.jpg' %}" alt="Product">
 												</a>
 											</div>
 											<div class="product-description">
@@ -302,7 +302,7 @@
 										<div class="single-product">
 											<div class="product-img">
 												<a href="#">
-													<img class="primary-img" src="img/product/small/5.jpg" alt="Product">
+													<img class="primary-img" src="{% static 'img/product/small/5.jpg' %}" alt="Product">
 												</a>
 											</div>
 											<div class="product-description">
@@ -325,7 +325,7 @@
 										<div class="single-product">
 											<div class="product-img">
 												<a href="#">
-													<img class="primary-img" src="img/product/small/6.jpg" alt="Product">
+													<img class="primary-img" src="{% static 'img/product/small/6.jpg' %}" alt="Product">
 												</a>
 											</div>
 											<div class="product-description">
@@ -348,7 +348,7 @@
 										<div class="single-product">
 											<div class="product-img">
 												<a href="#">
-													<img class="primary-img" src="img/product/small/7.jpg" alt="Product">
+													<img class="primary-img" src="{% static 'img/product/small/7.jpg' %}" alt="Product">
 												</a>
 											</div>
 											<div class="product-description">
@@ -371,7 +371,7 @@
 										<div class="single-product">
 											<div class="product-img">
 												<a href="#">
-													<img class="primary-img" src="img/product/small/8.jpg" alt="Product">
+													<img class="primary-img" src="{% static 'img/product/small/8.jpg' %}" alt="Product">
 												</a>
 											</div>
 											<div class="product-description">
@@ -478,69 +478,5 @@
 		<!-- FOOTER-AREA END -->
         
 
-		<!-- jquery
-		============================================ -->		
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-        <script src="js/vendor/jquery-1.12.4.min.js"></script>
-		<!-- popper JS
-		============================================ -->		
-        <script src="js/popper.min.js"></script>
-		<!-- bootstrap JS
-		============================================ -->		
-        <script src="js/bootstrap.min.js"></script>
-		<!-- wow JS
-		============================================ -->		
-        <script src="js/wow.min.js"></script>
-	
-		<!-- meanmenu JS
-		============================================ -->		
-        <script src="js/jquery.meanmenu.js"></script>
-		<!-- owl.carousel JS
-		============================================ -->		
-        <script src="js/owl.carousel.min.js"></script>
-		<!-- scrollUp JS
-		============================================ -->		
-        <script src="js/jquery.scrollUp.min.js"></script>
-        <!-- countdon.min JS
-		============================================ -->		
-        <script src="js/countdon.min.js"></script>
-        <script src="js/jquery-price-slider.js"></script>
-        <!-- Nivo slider js
-		============================================ --> 		
-		<script src="lib/js/jquery.nivo.slider.js" type="text/javascript"></script>
-		<!-- Google Map js -->
-        <script src="https://maps.googleapis.com/maps/api/js"></script>
-		
-		<script>
-			function initialize() {
-				var mapOptions = {
-					zoom: 5,
-					scrollwheel: false,
-					center: new google.maps.LatLng(40.7058316, -74.2581978)
-				};
 
-				var map = new google.maps.Map(document.getElementById('googleMap'),
-					mapOptions);
-
-				var marker = new google.maps.Marker({
-					position: map.getCenter(),
-					animation:google.maps.Animation.BOUNCE,
-					icon: 'img/map-marker.png',
-					map: map
-				});
-			}
-			
-			google.maps.event.addDomListener(window, 'load', initialize);
-		</script>
-		
-		<!-- Image zoom js
-		============================================ --> 		
-		<script src="js/jquery.zoom.min.js"></script>
-		<!-- plugins JS
-		============================================ -->		
-        <script src="js/plugins.js"></script>
-		<!-- main JS
-		============================================ -->		
-        <script src="js/main.js"></script>
-    </body>
-</html>
+{% endblock main %}
