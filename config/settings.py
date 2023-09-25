@@ -74,6 +74,7 @@ TEMPLATES = [
                 'shop.context_processors.header_categories',
                 'sekizai.context_processors.sekizai',
                 'shop.context_processors.brand_logo',
+                'shop.context_processors.all_categories',
             ],
         },
     },

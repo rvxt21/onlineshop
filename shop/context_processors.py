@@ -11,8 +11,18 @@ def header_categories(request):
     }
 
 
+def all_categories(request):
+    categories_list = Category.objects.annotate(
+        product_count=Count('products')).filter(product_count__gt=0)
+    return {
+        'categories_list': categories_list
+    }
+
+
 def brand_logo(request):
     brands = Brand.objects.distinct()
     return {
         'brands': brands
     }
+
+

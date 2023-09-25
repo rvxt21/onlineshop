@@ -69,8 +69,8 @@
                             <div class="single-support">
                                 <i class="fa fa-truck"></i>
                                 <div class="support-text">
-                                    <h1 class="zero gfont-1">Free shipping</h1>
-                                    <p>On order over $199</p>
+                                    <h1 class="zero gfont-1">Безкоштовна доставка</h1>
+                                    <p>При замовленні від 5000 UAH</p>
                                 </div>
                             </div>
                         </div>
@@ -80,8 +80,8 @@
                             <div class="single-support">
                                 <i class="fa fa-money"></i>
                                 <div class="support-text">
-                                    <h1 class="zero gfont-1">Money back 100%</h1>
-                                    <p>Within 30 Days after delivery</p>
+                                    <h1 class="zero gfont-1">Повернення коштів 100%</h1>
+                                    <p>Протягом 30 днів після доставки</p>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-12">
                         <div class="logo">
-                            <a href="index.html" title="Malias"><img src="https://tennismag.com.ua/images/tennismag_logo.png" alt="Tennis shop"></a>
+                            <a href="{% url 'index' %}" title="Malias"><img src="https://tennismag.com.ua/images/tennismag_logo.png" alt="Tennis shop"></a>
                         </div>
                     </div>
 
@@ -121,16 +121,16 @@
                         </div>
                     </div>
 
-        <script>
-            var select = document.getElementById('category-select');
-            select.addEventListener('change', function () {
-                var selectedOption = select.options[select.selectedIndex];
+                    <script>
+                        var select = document.getElementById('category-select');
+                        select.addEventListener('change', function () {
+                            var selectedOption = select.options[select.selectedIndex];
 
-                if (selectedOption.value) {
-                    window.location.href = selectedOption.value;
-                }
-            });
-        </script>
+                            if (selectedOption.value) {
+                                window.location.href = selectedOption.value;
+                            }
+                        });
+                    </script>
                                 <div class="header-search">
                                     <form action="#">
                                         <input type="text" placeholder="Search">

@@ -1,11 +1,6 @@
 {%extends 'base.html' %}
 {% load static %}
 {% block main %}
-        <!-- Add your site or application content here -->
-
-		<!-- HEADER-AREA START -->
-
-		<!-- HEADER AREA END -->
 		<!-- START PAGE-CONTENT -->
 		<section class="page-content">
 			<!-- Start Account-Create-Area -->
@@ -27,8 +22,9 @@
 						</div>
 					</div>
 					<div class="account-create">
-						<form action="#">
-							<div class="row">
+						<form method="post">
+							{% csrf_token %}
+
 								<div class="col-md-12">
 									<div class="account-create-box">
 										<h2 class="box-info">Personal Information</h2>
@@ -36,19 +32,19 @@
 											<div class="col-md-4 col-12">
 												<div class="single-create">
 													<p>First Name <sup>*</sup></p>
-													<input class="form-control" type="text" name="firstname"/>
+													<input class="form-control" type="text" name="firstname" placeholder="First Name"/>
 												</div>
 											</div>
 											<div class="col-md-4 col-12">
 												<div class="single-create">
 													<p>Last Name <sup>*</sup></p>
-													<input class="form-control" type="text" name="lastname"/>
+													<input class="form-control" type="text" name="lastname" placeholder="Last Name"/>
 												</div>
 											</div>
 											<div class="col-md-4 col-12">
 												<div class="single-create">
 													<p>Email Address <sup>*</sup></p>
-													<input class="form-control" type="email" name="email"/>
+													<input class="form-control" type="email" name="email" placeholder="Email Address"/>
 												</div>
 											</div>
 											<div class="col-12">
@@ -62,13 +58,13 @@
 											<div class="col-lg-4 col-md-6 col-12">
 												<div class="single-create">
 													<p>Password <sup>*</sup></p>
-													<input class="form-control" type="password" name="firstname"/>
+													<input class="form-control" type="password" name="password" placeholder="Password"/>
 												</div>
 											</div>
 											<div class="col-lg-4 col-md-6 col-12">
 												<div class="single-create">
 													<p>Confirm Password <sup>*</sup></p>
-													<input class="form-control" type="password" name="firstname"/>
+													<input class="form-control" type="password" name="confirm_password" placeholder="Confirm Password"/>
 												</div>
 											</div>
 										</div>

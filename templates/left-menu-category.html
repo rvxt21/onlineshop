@@ -1,0 +1,24 @@
+<div class="left-category-menu d-lg-block d-none">
+	                        <div class="left-product-cat">
+	                            <div class="category-heading">
+	                                <h2>Категорії</h2>
+	                            </div>
+	                            <div class="category-menu-list">
+	                                <ul>
+										{% for category in categories_list %}
+	                                    <!-- Single menu start -->
+	                                    <li class="arrow-plus active">
+	                                        <a href="{% url 'catalog' category.slug %}">{{ category.name }}</a>
+	                                        <!--  MEGA MENU START -->
+
+	                                        <!-- MEGA MENU END -->
+	                                    </li>
+										{% endfor %}
+	                                    <!-- Single menu end -->
+										<!-- Single menu start -->
+
+	                                    <!-- MENU ACCORDION END -->
+	                                </ul>
+	                            </div>
+	                        </div>
+	                    </div>
