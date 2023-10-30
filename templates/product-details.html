@@ -1,9 +1,6 @@
-{%extends 'base.html' %}
+{%extends 'layout/base.html' %}
 {% load static %}
 {% block main %}
-<!-- HEADER-AREA START -->
-<!-- HEADER AREA END -->
-<!-- START PAGE-CONTENT -->
 <section class="page-content">
 	<div class="container">
 		<div class="row">
@@ -20,7 +17,7 @@
 		<div class="row">
 			<div class="col-lg-3 order-lg-1 order-2">
 				<!-- CATEGORY-MENU-LIST START -->
-				{% include 'left-menu-category.html' %}
+				{% include 'layout/left-menu-category.html' %}
 				<!-- END CATEGORY-MENU-LIST -->
 				<!-- START SMALL-PRODUCT-AREA -->
 				<div class="small-product-area carosel-navigation hidden-sm hidden-xs">
@@ -35,190 +32,9 @@
 						<div class="active-bestseller sidebar">
 							<div class="col-12">
 								<!-- Start Single-Product -->
-								<div class="single-product">
-									<div class="product-img">
-										<a href="#">
-											<img class="primary-img" src="{% static 'img/product/small/1.jpg' %}" alt="Product">
-										</a>
-									</div>
-									<div class="product-description">
-										<h5><a href="#">Various Versions</a></h5>
-										<div class="price-box">
-											<span class="price">$90.00</span>
-											<span class="old-price">$110.00</span>
-										</div>
-										<span class="rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o"></i>
-										</span>
-									</div>
-								</div>
-								<!-- End Single-Product -->
-								<!-- Start Single-Product -->
-								<div class="single-product">
-									<div class="product-img">
-										<a href="#">
-											<img class="primary-img" src="{% static 'img/product/small/2.jpg' %}" alt="Product">
-										</a>
-									</div>
-									<div class="product-description">
-										<h5><a href="#">{{ product.title }}</a></h5>
-										<div class="price-box">
-											<span class="price">{{ product.price }}₴</span>
-											<span class="old-price">{% if product.old_price %}{{ product.old_price }}₴{% endif %}</span>
-										</div>
-										<span class="rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o"></i>
-										</span>
-									</div>
-								</div>
-								<!-- End Single-Product -->
-								<!-- Start Single-Product -->
-								<div class="single-product">
-									<div class="product-img">
-										<a href="#">
-											<img class="primary-img" src="{% static 'img/product/small/3.jpg' %}" alt="Product">
-										</a>
-									</div>
-									<div class="product-description">
-										<h5><a href="#">Various Versions</a></h5>
-										<div class="price-box">
-											<span class="price">$90.00</span>
-											<span class="old-price">$110.00</span>
-										</div>
-										<span class="rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o"></i>
-										</span>
-									</div>
-								</div>
-								<!-- End Single-Product -->
-								<!-- Start Single-Product -->
-								<div class="single-product">
-									<div class="product-img">
-										<a href="#">
-											<img class="primary-img" src="{% static 'img/product/small/4.jpg' %}" alt="Product">
-										</a>
-									</div>
-									<div class="product-description">
-										<h5><a href="#">Established Fact</a></h5>
-										<div class="price-box">
-											<span class="price">$99.00</span>
-											<span class="old-price">$110.00</span>
-										</div>
-										<span class="rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o"></i>
-										</span>
-									</div>
-								</div>
-								<!-- End Single-Product -->
-							</div>
-							<div class="col-12">
-								<!-- Start Single-Product -->
-								<div class="single-product">
-									<div class="product-img">
-										<a href="#">
-											<img class="primary-img" src="{% static 'img/product/small/5.jpg' %}" alt="Product">
-										</a>
-									</div>
-									<div class="product-description">
-										<h5><a href="#">Various Versions</a></h5>
-										<div class="price-box">
-											<span class="price">$90.00</span>
-											<span class="old-price">$110.00</span>
-										</div>
-										<span class="rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o"></i>
-										</span>
-									</div>
-								</div>
-								<!-- End Single-Product -->
-								<!-- Start Single-Product -->
-								<div class="single-product">
-									<div class="product-img">
-										<a href="#">
-											<img class="primary-img" src="{% static 'img/product/small/6.jpg' %}" alt="Product">
-										</a>
-									</div>
-									<div class="product-description">
-										<h5><a href="#">Established Fact</a></h5>
-										<div class="price-box">
-											<span class="price">$99.00</span>
-											<span class="old-price">$110.00</span>
-										</div>
-										<span class="rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o"></i>
-										</span>
-									</div>
-								</div>
-								<!-- End Single-Product -->
-								<!-- Start Single-Product -->
-								<div class="single-product">
-									<div class="product-img">
-										<a href="#">
-											<img class="primary-img" src="{% static 'img/product/small/7.jpg' %}" alt="Product">
-										</a>
-									</div>
-									<div class="product-description">
-										<h5><a href="#">Various Versions</a></h5>
-										<div class="price-box">
-											<span class="price">$90.00</span>
-											<span class="old-price">$110.00</span>
-										</div>
-										<span class="rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o"></i>
-										</span>
-									</div>
-								</div>
-								<!-- End Single-Product -->
-								<!-- Start Single-Product -->
-								<div class="single-product">
-									<div class="product-img">
-										<a href="#">
-											<img class="primary-img" src="{% static 'img/product/small/8.jpg' %}" alt="Product">
-										</a>
-									</div>
-									<div class="product-description">
-										<h5><a href="#">Established Fact</a></h5>
-										<div class="price-box">
-											<span class="price">$99.00</span>
-											<span class="old-price">$110.00</span>
-										</div>
-										<span class="rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o"></i>
-										</span>
-									</div>
-								</div>
+								{% for lowest_price_product in lowest_price_products %}
+								{% include 'layout/bestsellers.html' %}
+								{% endfor %}
 								<!-- End Single-Product -->
 							</div>
 						</div>
@@ -330,16 +146,7 @@
 								<span class="item-stock">Availability: <span class="text-stock">In Stock</span></span>
 							</div>
 							<div class="about-product">
-								<div class="product-select product-color">
-									<label><sup>*</sup>Color</label>
-									<select class="form-control">
-										<option> --- Please Select --- </option>
-										<option>Black (+$10.00) </option>
-										<option>White (+$8.00)</option>
-										<option>Pink (+$30.00)</option>
-										<option>Green (+$30.00)</option>
-									</select>
-								</div>
+								{% if sizes %}
 									<div class="product-select product-Size">
 										<label><sup>*</sup>Size</label>
 										<select class="form-control">
@@ -349,10 +156,7 @@
 											{% endfor %}
 										</select>
 									</div>
-								<div class="product-select product-type">
-									<label><sup>*</sup>Text</label>
-									<input type="text"  class="form-control" placeholder="Text"/>
-								</div>
+								{% endif %}
 								<div class="product-select product-date">
 									<label><sup>*</sup>Date</label>
 									<input type="text"  class="form-control" placeholder="2016/02/15"/>
@@ -487,123 +291,23 @@
 							<div class="row">
 								<div class="active-product-carosel">
 									<!-- Start Single-Product -->
+									{% for related_prod in related_products %}
 									<div class="col-12">
 										<div class="single-product">
 											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/mediam/3bg.jpg' %}" alt="Product">
+												<a href="{% url 'product' slug=related_prod.slug %}">
+													<img class="primary-img" src="{{ related_prod.images.all.0.image.url }}" alt="Product">
 												</a>
 											</div>
 											<div class="product-description">
-												<h5><a href="#">Various Versions</a></h5>
+												<h5><a href="#">{{ related_prod.title }}</a></h5>
 												<div class="price-box">
-													<span class="price">$80.00</span>
+													<span class="price">{{ related_prod.price }}₴</span>
 												</div>
 											</div>
 										</div>
 									</div>
-									<!-- End Single-Product -->
-									<!-- Start Single-Product -->
-									<div class="col-12">
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/mediam/11.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Trid Palm</a></h5>
-												<div class="price-box">
-													<span class="price">$79.00</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- End Single-Product -->
-									<!-- Start Single-Product -->
-									<div class="col-12">
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/mediam/1.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Established Fact</a></h5>
-												<div class="price-box">
-													<span class="price">$75.00</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- End Single-Product -->
-									<!-- Start Single-Product -->
-									<div class="col-12">
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/mediam/2.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Trid Palm</a></h5>
-												<div class="price-box">
-													<span class="price">$95.00</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- End Single-Product -->
-									<!-- Start Single-Product -->
-									<div class="col-12">
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/mediam/13.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Established Fact</a></h5>
-												<div class="price-box">
-													<span class="price">$82.00</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- End Single-Product -->
-									<!-- Start Single-Product -->
-									<div class="col-12">
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/mediam/10.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Trid Palm</a></h5>
-												<div class="price-box">
-													<span class="price">$99.00</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- End Single-Product -->
-									<!-- Start Single-Product -->
-									<div class="col-12">
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/mediam/10bg.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Various Versions</a></h5>
-												<div class="price-box">
-													<span class="price">$95.00</span>
-												</div>
-											</div>
-										</div>
-									</div>
+									{% endfor %}
 									<!-- End Single-Product -->
 								</div>
 							</div>
@@ -618,34 +322,7 @@
 		</div>
 	</div>
 	<!-- START BRAND-LOGO-AREA -->
-
 	<!-- END BRAND-LOGO-AREA -->
-	<!-- START SUBSCRIBE-AREA -->
-	<div class="subscribe-area">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-8 col-md-6 col-12">
-					<label>Sign Up for Our Newsletter:</label>
-					<div class="subscribe">
-						<form action="#">
-							<input type="text" placeholder="Enter Your E-mail">
-							<button type="submit">Subscribe</button>
-						</form>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="social-media">
-						<a href="#"><i class="fa fa-facebook fb"></i></a>
-						<a href="#"><i class="fa fa-google-plus gp"></i></a>
-						<a href="#"><i class="fa fa-twitter tt"></i></a>
-						<a href="#"><i class="fa fa-youtube yt"></i></a>
-						<a href="#"><i class="fa fa-linkedin li"></i></a>
-						<a href="#"><i class="fa fa-rss rs"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- END SUBSCRIBE-AREA -->
 </section>
 <!-- END PAGE-CONTENT -->
@@ -666,7 +343,7 @@
 						<div class="product-images">
 							<div class="main-image images">
 								<img alt="#" src="{% static 'img/product/quickview-photo.jpg' %}{% static '"/>
-							</' %}div>
+							</div>
 						</div><!-- .product-images -->
 
 						<div class="product-info">
@@ -712,5 +389,4 @@
    <!-- END Modal -->
 </div>
 <!-- END QUICKVIEW PRODUCT -->
-
 {% endblock main %}

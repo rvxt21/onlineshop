@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'users',
     'shop',
     'django_summernote',
+    'website',
 ]
 
 MIDDLEWARE = [

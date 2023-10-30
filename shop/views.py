@@ -43,42 +43,33 @@ class CatalogView(ListView):
         return context
 
 
-# class LatestProductsIndexView(ListView):
-#     template_name = 'index.html'
-#     model = Product
-#     context_object_name = 'products_latest'
-#     paginate_by = 10
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         latest_products = Product.objects.order_by('price')
-#         context = {
-#             'products_latest': latest_products
-#         }
-#         return context
+class ProductView(DetailView):
+    template_name = 'product-details.html'
+    model = Product
+    context_object_name = 'product'
+    slug_url_kwarg = 'slug'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        single_product = context['product']
+        sizes = single_product.size.all() if hasattr(single_product,
+                                                     'size') else None
+        categories = single_product.categories.all()
+        related_products = Product.objects.filter(
+            categories__in=single_product.categories.all()).\
+        exclude(id=single_product.id).order_by('?')[:7]
+        context |={
+            'product': single_product,
+            'sizes':sizes,
+            'categories': categories,
+            'related_products': related_products,
+            'lowest_price_products': lowest_price_products_selector()[:4]
+        }
+        return context
 
 
-def product(request, **kwargs):
-    single_product = get_object_or_404(Product, slug=kwargs.get('slug'))
-    sizes = single_product.size.all() if hasattr(single_product,
-                                                 'size') else None
-    categories = single_product.categories.all()
-    context = {
-        'product': single_product,
-        'sizes': sizes,
-        'categories': categories,
-    }
-    return render(request, 'product-details.html', context=context)
-
-
-def contact(request):
-    context = {}
-    return render(request, 'contact.html', context=context)
-
-
-def about(request):
-    context = {}
-    return render(request, 'about.html', context=context)
+class AboutView(TemplateView):
+    template_name = 'about.html'
 
 
 def header_categories(request):

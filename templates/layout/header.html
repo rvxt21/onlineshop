@@ -33,10 +33,10 @@
                 <!-- Start Top-Link -->
                 <div class="top-link">
                     <ul class="link">
-                        <li><a href="my-account.html"><i class="fa fa-user"></i> Мій аккаунт</a></li>
-                        <li><a href="wishlist.html"><i class="fa fa-heart"></i> Список бажань (0)</a></li>
-                        <li><a href="checkout.html"><i class="fa fa-share"></i> Checkout</a></li>
-                        <li><a href="account.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-user"></i> Мій аккаунт</a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-heart"></i> Список бажань (0)</a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-share"></i> Checkout</a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-unlock-alt"></i> Login</a></li>
                     </ul>
                 </div>
                 <!-- End Top-Link -->
@@ -140,7 +140,7 @@
                     <div class="top-cart">
                         <ul>
                             <li>
-                                <a href="cart.html">
+                                <a href="javascript:void(0)">
                                     <span class="cart-icon"><i class="fa fa-shopping-cart"></i></span>
                                     <span class="cart-total">
                                         <span class="cart-title">shopping cart</span>
@@ -186,7 +186,7 @@
                                             <span class="amount">$550.00</span>
                                         </span>
                                         <span class="cart-button-top">
-                                            <a href="cart.html">View Cart</a>
+                                            <a href="../cart.html">View Cart</a>
                                             <a href="checkout.html">Checkout</a>
                                         </span>
                                     </div>
@@ -215,25 +215,25 @@
                             {% for category in best_price_categories %}
                             <li><a href="#">Best price</a>
                                 <ul>
-                                    <li><a href="cart.html">{{ category.name }}</a></li>
+                                    <li><a href="../cart.html">{{ category.name }}</a></li>
                                 </ul>
                             </li>
                             {% endfor %}
                             <li class="new"><a href="shop-list.html">New Products</a></li>
-                            <li><a href="shop.html">Special Products</a></li>
+                            <li><a href="../shop.html">Special Products</a></li>
                             <li><a href="#">Pages</a>
                                 <ul>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="account.html">Create Account</a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="product-details.html">Product details</a></li>
-                                    <li><a href="shop.html">Shop Grid View</a></li>
-                                    <li><a href="shop-list.html">Shop List View</a></li>
-                                    <li><a href="wishlist.html">Wish List</a></li>
+                                    <li><a href="javascript:void(0)">Cart</a></li>
+                                    <li><a href="javascript:void(0)">Checkout</a></li>
+                                    <li><a href="javascript:void(0)">Create Account</a></li>
+                                    <li><a href="javascript:void(0)">My Account</a></li>
+                                    <li><a href="javascript:void(0)">Product details</a></li>
+                                    <li><a href="javascript:void(0)">Shop Grid View</a></li>
+                                    <li><a href="javascript:void(0)">Shop List View</a></li>
+                                    <li><a href="javascript:void(0)">Wish List</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -255,23 +255,23 @@
                                 <li><a href="{% url 'index' %}">Home Page 2</a></li>
                             </ul>
                         </li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="shop.html">Bestseller Products</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../shop.html">Bestseller Products</a></li>
                         <li><a href="shop-list.html">New Products</a></li>
                         <li><a href="#">Pages</a>
                             <ul>
-                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="../cart.html">Cart</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="account.html">Create Account</a></li>
+                                <li><a href="../account.html">Create Account</a></li>
                                 <li><a href="login.html">Login</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="product-details.html">Product details</a></li>
-                                <li><a href="shop.html">Shop Grid View</a></li>
+                                <li><a href="../my-account.html">My Account</a></li>
+                                <li><a href="../product-details.html">Product details</a></li>
+                                <li><a href="../shop.html">Shop Grid View</a></li>
                                 <li><a href="shop-list.html">Shop List View</a></li>
-                                <li><a href="wishlist.html">Wish List</a></li>
+                                <li><a href="../wishlist.html">Wish List</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>

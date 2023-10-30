@@ -1,0 +1,21 @@
+<div class="single-product">
+    <div class="product-img">
+        <a href="{% url 'product' slug=lowest_price_product.slug %}">
+            <img class="primary-img" src="{{ lowest_price_product.images.all.0.image.url }}" alt="Product">
+        </a>
+    </div>
+    <div class="product-description">
+        <h5><a href="{% url 'product' slug=lowest_price_product.slug %}">{{lowest_price_product.title}}</a></h5>
+        <div class="price-box">
+            <span class="price">{{lowest_price_product.price}}₴</span>
+            <span class="old-price">{% if product.old_price %}{{ product.old_price }}₴{% endif %}</span>
+        </div>
+        <span class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+        </span>
+    </div>
+</div>

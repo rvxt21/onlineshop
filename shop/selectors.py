@@ -17,3 +17,4 @@ def latest_products_selector() -> QuerySet[Product]:
 
 def random_products_selector() -> QuerySet[Product]:
     return Product.objects.order_by('?')[:10]
+

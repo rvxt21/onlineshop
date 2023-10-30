@@ -1,4 +1,4 @@
-{%extends 'base.html' %}
+{%extends 'layout/base.html' %}
 {% load static %}
 {% block main %}
 <div class="category-slider-area">
@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-lg-3">
 				<!-- CATEGORY-MENU-LIST START -->
-				{% include 'left-menu-category.html' %}
+				{% include 'layout/left-menu-category.html' %}
 				<!-- END CATEGORY-MENU-LIST -->
 			</div>
 			<div class="col-lg-9">
@@ -128,7 +128,7 @@
 				</div>
 		   <div class="row">
 				{% for product in hot_deals_products %}
-				{% include 'hot-deals-product.html' %}
+				{% include 'layout/hot-deals-product.html' %}
 				{% endfor %}
 		   </div>
 		</div>
@@ -183,58 +183,50 @@
 				</div>
 			</div>
 			<!-- Start Product -->
-			<div class="product carosel-navigation-style-2">
-				<div class="tab-content">
-					<!-- Product = Speaker -->
-					<div role="tabpanel" class="tab-pane fade show active" id="display-1-1">
-						<div class="row">
-							{% for product in latest_products %}
-							<div class="active-product-carosel-style-2">
-								<!-- Start Single-Product -->
-								<div class="col-12">
-									<div class="single-product style-2">
-										<div class="label_new">
-											<span class="new">new</span>
-										</div>
-										<div class="sale-off">
-											<span class="sale-percent">-55%</span>
-										</div>
-										<div class="product-img">
-											<a href="{% url 'product' slug=product.slug %}">
-												<img class="primary-img" src="{{ product.images.all.0.image.url }}" alt="Product">
-												<img class="secondary-img" src="{{ product.images.all.1.image.url }}" alt="Product">
-											</a>
-										</div>
-										<div class="product-description">
-											<h5><a href="{% url 'product' slug=product.slug %}">{{ product.title }}</a></h5>
-											<div class="price-box">
-												<span class="price">{{ product.price }}₴</span>
-												<span class="old-price">{% if product.old_price %}{{ product.old_price }}₴{% endif %}</span>
-											</div>
-											<span class="rating">
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star-o"></i>
-											</span>
-											<div class="hot-deals-button">
-												<button><i class="fa fa-plus"></i> Add to Cart</button>
-												<div class="hot-deals-button-2">
-													<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart-o"></i></a>
-													<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-signal"></i></a>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-<!-- End Single-Product -->{% if forloop.counter|divisibleby:5 and not forloop.last %}
+			<div class="row">
+				<div class="col-12 col-lg-12">
+					<div class="product carosel-navigation">
+						<div class="tab-content">
+							<!-- Product = display-4-1 -->
+							<div role="tabpanel" class="tab-pane fade show active" id="display-4-1">
+								<div class="row">
+									<div class="active-small-product">
+			{% for product in latest_products %}
+				<div class="col-12">
+					<div class="single-product">
+						<div class="product-img">
+							<a href="{% url 'product' slug=product.slug %}">
+								<img class="primary-img" src="{{ product.images.all.0.image.url }}" alt="Product">
+								<img class="secondary-img" src="{{ product.images.all.1.image.url }}" alt="Product">
+							</a>
+						</div>
+						<div class="product-description">
+							<h5><a href="{% url 'product' slug=product.slug %}">{{ product.title }}</a></h5>
+							<div class="price-box">
+								<span class="price">{{ product.price }}₴</span>
+								<span class="old-price">{% if product.old_price %}{{ product.old_price }}₴{% endif %}</span>
 							</div>
-						<div class="row">
-  						{% endif %}
-						{% endfor %}
+							<span class="rating">
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+							</span>
+							<div class="product-action">
+								<div class="product-button-2">
+									<a href="#" data-toggle="tooltip" title="Add Cart"><i class="fa fa-shopping-cart"></i></a>
+									<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart-o"></i></a>
+									<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-signal"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
 			<!-- End Product -->
+						</div>
 					</div>
 				</div>
 			</div>
@@ -254,7 +246,6 @@
 			</div>
 			<!-- START RECENT-POSTS -->
 			<div class="recent-posts carosel-navigation-style-2 row">
-
 				<div class="active-recent-posts-style-2">
 					<!-- Start Single-Recent-Posts -->
 					<div class="col-12">
@@ -336,4 +327,5 @@
 			<!-- END RECENT-POSTS -->
 		</div>
 	</div>
+</div>
 {% endblock main %}
