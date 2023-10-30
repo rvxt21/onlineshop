@@ -1,718 +1,716 @@
 {%extends 'base.html' %}
 {% load static %}
 {% block main %}
-
-		<!-- HEADER-AREA START -->
-
-		<!-- HEADER AREA END -->
-		<!-- START PAGE-CONTENT -->
-		<section class="page-content">
-			<div class="container">
-	            <div class="row">
-					<div class="col-md-12">
-							<ul class="page-menu">
-								<li><a href="{% url 'index' %}">Home</a></li>
-								{% for category in categories %}
-									<li><a href="{% url 'catalog' category.slug %}">{{ category.name }}</a></li>
-								{% endfor %}
-								<li class="active"><a href="#">{{ product.name }}</a></li>
-							</ul>
-						</div>
+<!-- HEADER-AREA START -->
+<!-- HEADER AREA END -->
+<!-- START PAGE-CONTENT -->
+<section class="page-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+					<ul class="page-menu">
+						<li><a href="{% url 'index' %}">Home</a></li>
+						{% for category in categories %}
+							<li><a href="{% url 'catalog' category.slug %}">{{ category.name }}</a></li>
+						{% endfor %}
+						<li class="active"><a href="#">{{ product.name }}</a></li>
+					</ul>
 				</div>
-				<div class="row">
-					<div class="col-lg-3 order-lg-1 order-2">
-						<!-- CATEGORY-MENU-LIST START -->
-	                    {% include 'left-menu-category.html' %}
-						<!-- END CATEGORY-MENU-LIST -->
-						<!-- START SMALL-PRODUCT-AREA -->
-						<div class="small-product-area carosel-navigation hidden-sm hidden-xs">
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="area-title">
-										<h3 class="title-group gfont-1">Bestseller</h3>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="active-bestseller sidebar">
-									<div class="col-12">
-										<!-- Start Single-Product -->
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/small/1.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Various Versions</a></h5>
-												<div class="price-box">
-													<span class="price">$90.00</span>
-													<span class="old-price">$110.00</span>
-												</div>
-												<span class="rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-											</div>
-										</div>
-										<!-- End Single-Product -->
-										<!-- Start Single-Product -->
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/small/2.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">{{ product.title }}</a></h5>
-												<div class="price-box">
-													<span class="price">{{ product.price }}₴</span>
-													<span class="old-price">{% if product.old_price %}{{ product.old_price }}₴{% endif %}</span>
-												</div>
-												<span class="rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-											</div>
-										</div>
-										<!-- End Single-Product -->
-										<!-- Start Single-Product -->
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/small/3.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Various Versions</a></h5>
-												<div class="price-box">
-													<span class="price">$90.00</span>
-													<span class="old-price">$110.00</span>
-												</div>
-												<span class="rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-											</div>
-										</div>
-										<!-- End Single-Product -->
-										<!-- Start Single-Product -->
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/small/4.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Established Fact</a></h5>
-												<div class="price-box">
-													<span class="price">$99.00</span>
-													<span class="old-price">$110.00</span>
-												</div>
-												<span class="rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-											</div>
-										</div>
-										<!-- End Single-Product -->
-									</div>
-									<div class="col-12">
-										<!-- Start Single-Product -->
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/small/5.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Various Versions</a></h5>
-												<div class="price-box">
-													<span class="price">$90.00</span>
-													<span class="old-price">$110.00</span>
-												</div>
-												<span class="rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-											</div>
-										</div>
-										<!-- End Single-Product -->
-										<!-- Start Single-Product -->
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/small/6.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Established Fact</a></h5>
-												<div class="price-box">
-													<span class="price">$99.00</span>
-													<span class="old-price">$110.00</span>
-												</div>
-												<span class="rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-											</div>
-										</div>
-										<!-- End Single-Product -->
-										<!-- Start Single-Product -->
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/small/7.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Various Versions</a></h5>
-												<div class="price-box">
-													<span class="price">$90.00</span>
-													<span class="old-price">$110.00</span>
-												</div>
-												<span class="rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-											</div>
-										</div>
-										<!-- End Single-Product -->
-										<!-- Start Single-Product -->
-										<div class="single-product">
-											<div class="product-img">
-												<a href="#">
-													<img class="primary-img" src="{% static 'img/product/small/8.jpg' %}" alt="Product">
-												</a>
-											</div>
-											<div class="product-description">
-												<h5><a href="#">Established Fact</a></h5>
-												<div class="price-box">
-													<span class="price">$99.00</span>
-													<span class="old-price">$110.00</span>
-												</div>
-												<span class="rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-											</div>
-										</div>
-										<!-- End Single-Product -->
-									</div>
-								</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-3 order-lg-1 order-2">
+				<!-- CATEGORY-MENU-LIST START -->
+				{% include 'left-menu-category.html' %}
+				<!-- END CATEGORY-MENU-LIST -->
+				<!-- START SMALL-PRODUCT-AREA -->
+				<div class="small-product-area carosel-navigation hidden-sm hidden-xs">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="area-title">
+								<h3 class="title-group gfont-1">Bestseller</h3>
 							</div>
 						</div>
-						<!-- END SMALL-PRODUCT-AREA -->
-						<!-- START SIDEBAR-BANNER -->
-	                    <div class="sidebar-banner d-lg-block d-none">
-	                    	<div class="active-sidebar-banner">
-	                    		<div class="single-sidebar-banner">
-	                    			<a href="#"><img src="{% static 'img/banner/1.jpg' %}" alt="Product Banner"></a>
-	                    		</div>
-	                    		<div class="single-sidebar-banner">
-	                    			<a href="#"><img src="{% static 'img/banner/2.jpg' %}" alt="Product Banner"></a>
-	                    		</div>
-	                    	</div>
-	                    </div>
-	                    <!-- END SIDEBAR-BANNER -->
 					</div>
-					<div class="col-lg-9 col-md-12 col-12 order-lg-2 order-1">
-						<!-- Start Toch-Prond-Area -->
-						<div class="toch-prond-area">
-							<div class="row">
-								<div class="col-lg-5 col-md-5 col-12">
-									<div class="clear"></div>
-									<div class="tab-content">
-										<!-- Product = display-1-1 -->
-										<div role="tabpanel" class="tab-pane fade show active" id="display-1">
-											<div class="row">
-												<div class="col-12">
-													<div class="toch-photo">
-														<a href="#"><img src="{{ product.images.all.0.image.url }}" alt="#" /></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!-- End Product = display-1-1 -->
-										<!-- Start Product = display-1-2 -->
-										<div role="tabpanel" class="tab-pane fade" id="display-2">
-											<div class="row">
-												<div class="col-12">
-													<div class="toch-photo">
-														<a href="#"><img src="{{ product.images.all.0.image.url }}" alt="#" /></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!-- End Product = display-1-2 -->
-										<!-- Start Product = di3play-1-3 -->
-										<div role="tabpanel" class="tab-pane fade" id="display-3">
-											<div class="row">
-												<div class="col-12">
-													<div class="toch-photo">
-														<a href="#"><img src="{{ product.images.all.0.image.url }}" alt="#" /></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!-- End Product = display-1-3 -->
-										<!-- Start Product = di3play-1-4 -->
-										<div role="tabpanel" class="tab-pane fade" id="display-4">
-											<div class="row">
-												<div class="col-12">
-													<div class="toch-photo">
-														<a href="#"><img src="{{ product.images.all.0.image.url }}" alt="#" /></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!-- End Product = display-1-4 -->
+					<div class="row">
+						<div class="active-bestseller sidebar">
+							<div class="col-12">
+								<!-- Start Single-Product -->
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-img" src="{% static 'img/product/small/1.jpg' %}" alt="Product">
+										</a>
 									</div>
-									<!-- Start Toch-prond-Menu -->
-									<div class="toch-prond-menu">
-										<ul class="nav">
-											{% for image in product.images.all %}
-											<li role="presentation"{% if forloop.first %} class="active"{% endif %}>
-												<a href="#display-{{ forloop.counter }}" role="tab" data-toggle="tab">
-													<img src="{{ image.image.url }}" alt="#" />
-												</a>
-											</li>
-											{% endfor %}
-										</ul>
+									<div class="product-description">
+										<h5><a href="#">Various Versions</a></h5>
+										<div class="price-box">
+											<span class="price">$90.00</span>
+											<span class="old-price">$110.00</span>
+										</div>
+										<span class="rating">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+										</span>
 									</div>
-									<!-- End Toch-prond-Menu -->
 								</div>
-								<div class="col-lg-7 col-md-7 col-12">
-									<h2 class="title-product">{{ product.title }}</h2>
-									<div class="about-toch-prond">
-										<p>
-											<span class="rating">
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star" aria-hidden="true"></i>
-												<i class="fa fa-star-o" aria-hidden="true"></i>
-											</span>
-											<a href="#">1 reviews</a>
-											/
-											<a href="#">Write a review</a>
-										</p>
-										<hr />
-										<ul>
-											{% for key, value in product.characteristics.items %}
-												<li><strong>{{ key }}:</strong> {{ value }}</li>
-											{% endfor %}
-										</ul>
-										<hr />
-										<span class="current-price">{{product.price}}₴</span>
-										<span class="item-stock">Availability: <span class="text-stock">In Stock</span></span>
+								<!-- End Single-Product -->
+								<!-- Start Single-Product -->
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-img" src="{% static 'img/product/small/2.jpg' %}" alt="Product">
+										</a>
 									</div>
-									<div class="about-product">
-										<div class="product-select product-color">
-											<label><sup>*</sup>Color</label>
-											<select class="form-control">
-												<option> --- Please Select --- </option>
-												<option>Black (+$10.00) </option>
-												<option>White (+$8.00)</option>
-												<option>Pink (+$30.00)</option>
-												<option>Green (+$30.00)</option>
-											</select>
+									<div class="product-description">
+										<h5><a href="#">{{ product.title }}</a></h5>
+										<div class="price-box">
+											<span class="price">{{ product.price }}₴</span>
+											<span class="old-price">{% if product.old_price %}{{ product.old_price }}₴{% endif %}</span>
 										</div>
-											<div class="product-select product-Size">
-												<label><sup>*</sup>Size</label>
-												<select class="form-control">
-													<option> --- Please Select --- </option>
-													{% for size in sizes %}
-														<option>{{ size.name }}</option>
-													{% endfor %}
-												</select>
+										<span class="rating">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+										</span>
+									</div>
+								</div>
+								<!-- End Single-Product -->
+								<!-- Start Single-Product -->
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-img" src="{% static 'img/product/small/3.jpg' %}" alt="Product">
+										</a>
+									</div>
+									<div class="product-description">
+										<h5><a href="#">Various Versions</a></h5>
+										<div class="price-box">
+											<span class="price">$90.00</span>
+											<span class="old-price">$110.00</span>
+										</div>
+										<span class="rating">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+										</span>
+									</div>
+								</div>
+								<!-- End Single-Product -->
+								<!-- Start Single-Product -->
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-img" src="{% static 'img/product/small/4.jpg' %}" alt="Product">
+										</a>
+									</div>
+									<div class="product-description">
+										<h5><a href="#">Established Fact</a></h5>
+										<div class="price-box">
+											<span class="price">$99.00</span>
+											<span class="old-price">$110.00</span>
+										</div>
+										<span class="rating">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+										</span>
+									</div>
+								</div>
+								<!-- End Single-Product -->
+							</div>
+							<div class="col-12">
+								<!-- Start Single-Product -->
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-img" src="{% static 'img/product/small/5.jpg' %}" alt="Product">
+										</a>
+									</div>
+									<div class="product-description">
+										<h5><a href="#">Various Versions</a></h5>
+										<div class="price-box">
+											<span class="price">$90.00</span>
+											<span class="old-price">$110.00</span>
+										</div>
+										<span class="rating">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+										</span>
+									</div>
+								</div>
+								<!-- End Single-Product -->
+								<!-- Start Single-Product -->
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-img" src="{% static 'img/product/small/6.jpg' %}" alt="Product">
+										</a>
+									</div>
+									<div class="product-description">
+										<h5><a href="#">Established Fact</a></h5>
+										<div class="price-box">
+											<span class="price">$99.00</span>
+											<span class="old-price">$110.00</span>
+										</div>
+										<span class="rating">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+										</span>
+									</div>
+								</div>
+								<!-- End Single-Product -->
+								<!-- Start Single-Product -->
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-img" src="{% static 'img/product/small/7.jpg' %}" alt="Product">
+										</a>
+									</div>
+									<div class="product-description">
+										<h5><a href="#">Various Versions</a></h5>
+										<div class="price-box">
+											<span class="price">$90.00</span>
+											<span class="old-price">$110.00</span>
+										</div>
+										<span class="rating">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+										</span>
+									</div>
+								</div>
+								<!-- End Single-Product -->
+								<!-- Start Single-Product -->
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-img" src="{% static 'img/product/small/8.jpg' %}" alt="Product">
+										</a>
+									</div>
+									<div class="product-description">
+										<h5><a href="#">Established Fact</a></h5>
+										<div class="price-box">
+											<span class="price">$99.00</span>
+											<span class="old-price">$110.00</span>
+										</div>
+										<span class="rating">
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star-o"></i>
+										</span>
+									</div>
+								</div>
+								<!-- End Single-Product -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END SMALL-PRODUCT-AREA -->
+				<!-- START SIDEBAR-BANNER -->
+				<div class="sidebar-banner d-lg-block d-none">
+					<div class="active-sidebar-banner">
+						<div class="single-sidebar-banner">
+							<a href="#"><img src="{% static 'img/banner/1.jpg' %}" alt="Product Banner"></a>
+						</div>
+						<div class="single-sidebar-banner">
+							<a href="#"><img src="{% static 'img/banner/2.jpg' %}" alt="Product Banner"></a>
+						</div>
+					</div>
+				</div>
+				<!-- END SIDEBAR-BANNER -->
+			</div>
+			<div class="col-lg-9 col-md-12 col-12 order-lg-2 order-1">
+				<!-- Start Toch-Prond-Area -->
+				<div class="toch-prond-area">
+					<div class="row">
+						<div class="col-lg-5 col-md-5 col-12">
+							<div class="clear"></div>
+							<div class="tab-content">
+								<!-- Product = display-1-1 -->
+								<div role="tabpanel" class="tab-pane fade show active" id="display-1">
+									<div class="row">
+										<div class="col-12">
+											<div class="toch-photo">
+												<a href="#"><img src="{{ product.images.all.0.image.url }}" alt="#" /></a>
 											</div>
-										<div class="product-select product-type">
-											<label><sup>*</sup>Text</label>
-											<input type="text"  class="form-control" placeholder="Text"/>
-										</div>
-										<div class="product-select product-date">
-											<label><sup>*</sup>Date</label>
-											<input type="text"  class="form-control" placeholder="2016/02/15"/>
-										</div>
-										<div class="product-select product-checkbox">
-											<label><sup>*</sup>Checkbox</label>
-											<label><input type="checkbox" /> Checkbox 1  (+$5.00)</label>
-										</div>
-										<div class="product-select product-button">
-											<button type="submit" >
-												<i class="fa fa-calendar"></i>
-											</button>
 										</div>
 									</div>
-									<div class="product-quantity">
-										<span>Qty</span>
-										<input type="number" placeholder="1" />
-										<button type="submit" class="toch-button toch-add-cart">Add to Cart</button>
-										<button type="submit" class="toch-button toch-wishlist">wishlist</button>
-										<button type="submit" class="toch-button toch-compare">Compare</button>
-										<hr />
-										<a href="#"><img src="{% static 'img/icon/social.png' %}" alt="#" /></a>
+								</div>
+								<!-- End Product = display-1-1 -->
+								<!-- Start Product = display-1-2 -->
+								<div role="tabpanel" class="tab-pane fade" id="display-2">
+									<div class="row">
+										<div class="col-12">
+											<div class="toch-photo">
+												<a href="#"><img src="{{ product.images.all.0.image.url }}" alt="#" /></a>
+											</div>
+										</div>
 									</div>
+								</div>
+								<!-- End Product = display-1-2 -->
+								<!-- Start Product = di3play-1-3 -->
+								<div role="tabpanel" class="tab-pane fade" id="display-3">
+									<div class="row">
+										<div class="col-12">
+											<div class="toch-photo">
+												<a href="#"><img src="{{ product.images.all.0.image.url }}" alt="#" /></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- End Product = display-1-3 -->
+								<!-- Start Product = di3play-1-4 -->
+								<div role="tabpanel" class="tab-pane fade" id="display-4">
+									<div class="row">
+										<div class="col-12">
+											<div class="toch-photo">
+												<a href="#"><img src="{{ product.images.all.0.image.url }}" alt="#" /></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- End Product = display-1-4 -->
+							</div>
+							<!-- Start Toch-prond-Menu -->
+							<div class="toch-prond-menu">
+								<ul class="nav">
+									{% for image in product.images.all %}
+									<li role="presentation"{% if forloop.first %} class="active"{% endif %}>
+										<a href="#display-{{ forloop.counter }}" role="tab" data-toggle="tab">
+											<img src="{{ image.image.url }}" alt="#" />
+										</a>
+									</li>
+									{% endfor %}
+								</ul>
+							</div>
+							<!-- End Toch-prond-Menu -->
+						</div>
+						<div class="col-lg-7 col-md-7 col-12">
+							<h2 class="title-product">{{ product.title }}</h2>
+							<div class="about-toch-prond">
+								<p>
+									<span class="rating">
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star" aria-hidden="true"></i>
+										<i class="fa fa-star-o" aria-hidden="true"></i>
+									</span>
+									<a href="#">1 reviews</a>
+									/
+									<a href="#">Write a review</a>
+								</p>
+								<hr />
+								<ul>
+									{% for key, value in product.characteristics.items %}
+										<li><strong>{{ key }}:</strong> {{ value }}</li>
+									{% endfor %}
+								</ul>
+								<hr />
+								<span class="current-price">{{product.price}}₴</span>
+								<span class="item-stock">Availability: <span class="text-stock">In Stock</span></span>
+							</div>
+							<div class="about-product">
+								<div class="product-select product-color">
+									<label><sup>*</sup>Color</label>
+									<select class="form-control">
+										<option> --- Please Select --- </option>
+										<option>Black (+$10.00) </option>
+										<option>White (+$8.00)</option>
+										<option>Pink (+$30.00)</option>
+										<option>Green (+$30.00)</option>
+									</select>
+								</div>
+									<div class="product-select product-Size">
+										<label><sup>*</sup>Size</label>
+										<select class="form-control">
+											<option> --- Please Select --- </option>
+											{% for size in sizes %}
+												<option>{{ size.name }}</option>
+											{% endfor %}
+										</select>
+									</div>
+								<div class="product-select product-type">
+									<label><sup>*</sup>Text</label>
+									<input type="text"  class="form-control" placeholder="Text"/>
+								</div>
+								<div class="product-select product-date">
+									<label><sup>*</sup>Date</label>
+									<input type="text"  class="form-control" placeholder="2016/02/15"/>
+								</div>
+								<div class="product-select product-checkbox">
+									<label><sup>*</sup>Checkbox</label>
+									<label><input type="checkbox" /> Checkbox 1  (+$5.00)</label>
+								</div>
+								<div class="product-select product-button">
+									<button type="submit" >
+										<i class="fa fa-calendar"></i>
+									</button>
 								</div>
 							</div>
-							<!-- Start Toch-Box -->
-							<div class="toch-box">
-								<div class="row">
-									<div class="col-12">
-										<!-- Start Toch-Menu -->
-										<div class="toch-menu">
-											<ul class="nav">
-												<li><a class=" active" href="#description" role="tab" data-toggle="tab">Description</a></li>
-												<li><a href="#reviews" role="tab" data-toggle="tab">Reviews (1)</a></li>
-											</ul>
+							<div class="product-quantity">
+								<span>Qty</span>
+								<input type="number" placeholder="1" />
+								<button type="submit" class="toch-button toch-add-cart">Add to Cart</button>
+								<button type="submit" class="toch-button toch-wishlist">wishlist</button>
+								<button type="submit" class="toch-button toch-compare">Compare</button>
+								<hr />
+								<a href="#"><img src="{% static 'img/icon/social.png' %}" alt="#" /></a>
+							</div>
+						</div>
+					</div>
+					<!-- Start Toch-Box -->
+					<div class="toch-box">
+						<div class="row">
+							<div class="col-12">
+								<!-- Start Toch-Menu -->
+								<div class="toch-menu">
+									<ul class="nav">
+										<li><a class=" active" href="#description" role="tab" data-toggle="tab">Description</a></li>
+										<li><a href="#reviews" role="tab" data-toggle="tab">Reviews (1)</a></li>
+									</ul>
+								</div>
+								<!-- End Toch-Menu -->
+								<div class="tab-content toch-description-review">
+									<!-- Start display-description -->
+									<div class="tab-pane fade show active" id="description">
+										<div class="row">
+											<div class="col-12">
+												<div class="toch-description">
+													<p>{{ product.description }}
+													</p>
+												</div>
+											</div>
 										</div>
-										<!-- End Toch-Menu -->
-										<div class="tab-content toch-description-review">
-											<!-- Start display-description -->
-											<div class="tab-pane fade show active" id="description">
-												<div class="row">
-													<div class="col-12">
-														<div class="toch-description">
-															<p>{{ product.description }}
+									</div>
+									<!-- End display-description -->
+									<!-- Start display-reviews -->
+									<div class="tab-pane fade" id="reviews">
+										<div class="row">
+											<div class="col-12">
+												<div class="toch-reviews">
+													<div class="toch-table">
+														<table class="table table-striped table-bordered">
+															<tbody>
+																<tr>
+																	<td><strong>plaza theme</strong></td>
+																	<td class="text-right"><strong>16/02/2016</strong></td>
+																</tr>
+																<tr>
+																	<td colspan="2">
+																		<p>It is part of Australia's network of offshore processing centres for irregular migrants who arrive by boat, and also houses New Zealanders facing deportation from Australia.</p>
+																		<span><i class="fa fa-star"></i></span>
+																		<span><i class="fa fa-star"></i></span>
+																		<span><i class="fa fa-star"></i></span>
+																		<span><i class="fa fa-star"></i></span>
+																		<span><i class="fa fa-star-o"></i></span>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+													<div class="toch-review-title">
+														<h2>Write a review</h2>
+													</div>
+													<div class="review-message">
+														<div class="col-xs-12">
+															<p><sup>*</sup>Your Name <br>
+																<input type="text" class="form-control" />
+															</p>
+															<p><sup>*</sup>Your Name <br>
+																<textarea class="form-control"></textarea>
 															</p>
 														</div>
-													</div>
-												</div>
-											</div>
-											<!-- End display-description -->
-											<!-- Start display-reviews -->
-											<div class="tab-pane fade" id="reviews">
-												<div class="row">
-													<div class="col-12">
-														<div class="toch-reviews">
-															<div class="toch-table">
-																<table class="table table-striped table-bordered">
-																	<tbody>
-																		<tr>
-																			<td><strong>plaza theme</strong></td>
-																			<td class="text-right"><strong>16/02/2016</strong></td>
-																		</tr>
-																		<tr>
-																			<td colspan="2">
-																				<p>It is part of Australia's network of offshore processing centres for irregular migrants who arrive by boat, and also houses New Zealanders facing deportation from Australia.</p>
-																				<span><i class="fa fa-star"></i></span>
-																				<span><i class="fa fa-star"></i></span>
-																				<span><i class="fa fa-star"></i></span>
-																				<span><i class="fa fa-star"></i></span>
-																				<span><i class="fa fa-star-o"></i></span>
-																			</td>
-																		</tr>
-																	</tbody>
-																</table>
-															</div>
-															<div class="toch-review-title">
-																<h2>Write a review</h2>
-															</div>
-															<div class="review-message">
-																<div class="col-xs-12">
-																	<p><sup>*</sup>Your Name <br>
-																		<input type="text" class="form-control" />
-																	</p>
-																	<p><sup>*</sup>Your Name <br>
-																		<textarea class="form-control"></textarea>
-																	</p>
-																</div>
-																<div class="help-block">
-																	<span class="note">Note:</span>
-																	 HTML is not translated!
-																</div>
-																<div class="get-rating">
-																	<span><sup>*</sup>Rating </span>
-																	Bad
-																	<input type="radio" value="1" name="rating" />
-																	<input type="radio" value="2" name="rating" />
-																	<input type="radio" value="3" name="rating" />
-																	<input type="radio" value="4" name="rating" />
-																	<input type="radio" value="5" name="rating" />
-																	Good
-																</div>
-																<div class="buttons clearfix">
-																	<button class="btn btn-primary pull-right">Continue</button>
-																</div>
-															</div>
+														<div class="help-block">
+															<span class="note">Note:</span>
+															 HTML is not translated!
+														</div>
+														<div class="get-rating">
+															<span><sup>*</sup>Rating </span>
+															Bad
+															<input type="radio" value="1" name="rating" />
+															<input type="radio" value="2" name="rating" />
+															<input type="radio" value="3" name="rating" />
+															<input type="radio" value="4" name="rating" />
+															<input type="radio" value="5" name="rating" />
+															Good
+														</div>
+														<div class="buttons clearfix">
+															<button class="btn btn-primary pull-right">Continue</button>
 														</div>
 													</div>
 												</div>
 											</div>
-											<!-- End Product = display-reviews -->
 										</div>
 									</div>
+									<!-- End Product = display-reviews -->
 								</div>
 							</div>
-							<!-- End Toch-Box -->
-							<!-- START PRODUCT-AREA -->
-							<div class="product-area">
-								<div class="row">
-									<div class="col-12 col-lg-12">
-										<!-- Start Product-Menu -->
-										<div class="product-menu">
-											<div class="product-title">
-												<h3 class="title-group-2 gfont-1">Related Products</h3>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- End Product-Menu -->
-								<div class="clear"></div>
-								<!-- Start Product -->
-								<div class="product carosel-navigation">
-									<div class="row">
-										<div class="active-product-carosel">
-											<!-- Start Single-Product -->
-											<div class="col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="primary-img" src="{% static 'img/product/mediam/3bg.jpg' %}" alt="Product">
-														</a>
-													</div>
-													<div class="product-description">
-														<h5><a href="#">Various Versions</a></h5>
-														<div class="price-box">
-															<span class="price">$80.00</span>
-														</div>
-													</div>											
-												</div>
-											</div>
-											<!-- End Single-Product -->
-											<!-- Start Single-Product -->
-											<div class="col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="primary-img" src="{% static 'img/product/mediam/11.jpg' %}" alt="Product">
-														</a>
-													</div>
-													<div class="product-description">
-														<h5><a href="#">Trid Palm</a></h5>
-														<div class="price-box">
-															<span class="price">$79.00</span>
-														</div>
-													</div>											
-												</div>
-											</div>
-											<!-- End Single-Product -->
-											<!-- Start Single-Product -->
-											<div class="col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="primary-img" src="{% static 'img/product/mediam/1.jpg' %}" alt="Product">
-														</a>
-													</div>
-													<div class="product-description">
-														<h5><a href="#">Established Fact</a></h5>
-														<div class="price-box">
-															<span class="price">$75.00</span>
-														</div>
-													</div>											
-												</div>
-											</div>
-											<!-- End Single-Product -->
-											<!-- Start Single-Product -->
-											<div class="col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="primary-img" src="{% static 'img/product/mediam/2.jpg' %}" alt="Product">
-														</a>
-													</div>
-													<div class="product-description">
-														<h5><a href="#">Trid Palm</a></h5>
-														<div class="price-box">
-															<span class="price">$95.00</span>
-														</div>
-													</div>											
-												</div>
-											</div>
-											<!-- End Single-Product -->
-											<!-- Start Single-Product -->
-											<div class="col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="primary-img" src="{% static 'img/product/mediam/13.jpg' %}" alt="Product">
-														</a>
-													</div>
-													<div class="product-description">
-														<h5><a href="#">Established Fact</a></h5>
-														<div class="price-box">
-															<span class="price">$82.00</span>
-														</div>
-													</div>											
-												</div>
-											</div>
-											<!-- End Single-Product -->
-											<!-- Start Single-Product -->
-											<div class="col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="primary-img" src="{% static 'img/product/mediam/10.jpg' %}" alt="Product">
-														</a>
-													</div>
-													<div class="product-description">
-														<h5><a href="#">Trid Palm</a></h5>
-														<div class="price-box">
-															<span class="price">$99.00</span>
-														</div>
-													</div>											
-												</div>
-											</div>
-											<!-- End Single-Product -->
-											<!-- Start Single-Product -->
-											<div class="col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="primary-img" src="{% static 'img/product/mediam/10bg.jpg' %}" alt="Product">
-														</a>
-													</div>
-													<div class="product-description">
-														<h5><a href="#">Various Versions</a></h5>
-														<div class="price-box">
-															<span class="price">$95.00</span>
-														</div>
-													</div>											
-												</div>
-											</div>
-											<!-- End Single-Product -->
-										</div>
-									</div>
-
-								</div>
-								<!-- End Product -->
-							</div>
-							<!-- END PRODUCT-AREA -->
 						</div>
-						<!-- End Toch-Prond-Area -->
+					</div>
+					<!-- End Toch-Box -->
+					<!-- START PRODUCT-AREA -->
+					<div class="product-area">
+						<div class="row">
+							<div class="col-12 col-lg-12">
+								<!-- Start Product-Menu -->
+								<div class="product-menu">
+									<div class="product-title">
+										<h3 class="title-group-2 gfont-1">Related Products</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- End Product-Menu -->
+						<div class="clear"></div>
+						<!-- Start Product -->
+						<div class="product carosel-navigation">
+							<div class="row">
+								<div class="active-product-carosel">
+									<!-- Start Single-Product -->
+									<div class="col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-img" src="{% static 'img/product/mediam/3bg.jpg' %}" alt="Product">
+												</a>
+											</div>
+											<div class="product-description">
+												<h5><a href="#">Various Versions</a></h5>
+												<div class="price-box">
+													<span class="price">$80.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End Single-Product -->
+									<!-- Start Single-Product -->
+									<div class="col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-img" src="{% static 'img/product/mediam/11.jpg' %}" alt="Product">
+												</a>
+											</div>
+											<div class="product-description">
+												<h5><a href="#">Trid Palm</a></h5>
+												<div class="price-box">
+													<span class="price">$79.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End Single-Product -->
+									<!-- Start Single-Product -->
+									<div class="col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-img" src="{% static 'img/product/mediam/1.jpg' %}" alt="Product">
+												</a>
+											</div>
+											<div class="product-description">
+												<h5><a href="#">Established Fact</a></h5>
+												<div class="price-box">
+													<span class="price">$75.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End Single-Product -->
+									<!-- Start Single-Product -->
+									<div class="col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-img" src="{% static 'img/product/mediam/2.jpg' %}" alt="Product">
+												</a>
+											</div>
+											<div class="product-description">
+												<h5><a href="#">Trid Palm</a></h5>
+												<div class="price-box">
+													<span class="price">$95.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End Single-Product -->
+									<!-- Start Single-Product -->
+									<div class="col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-img" src="{% static 'img/product/mediam/13.jpg' %}" alt="Product">
+												</a>
+											</div>
+											<div class="product-description">
+												<h5><a href="#">Established Fact</a></h5>
+												<div class="price-box">
+													<span class="price">$82.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End Single-Product -->
+									<!-- Start Single-Product -->
+									<div class="col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-img" src="{% static 'img/product/mediam/10.jpg' %}" alt="Product">
+												</a>
+											</div>
+											<div class="product-description">
+												<h5><a href="#">Trid Palm</a></h5>
+												<div class="price-box">
+													<span class="price">$99.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End Single-Product -->
+									<!-- Start Single-Product -->
+									<div class="col-12">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-img" src="{% static 'img/product/mediam/10bg.jpg' %}" alt="Product">
+												</a>
+											</div>
+											<div class="product-description">
+												<h5><a href="#">Various Versions</a></h5>
+												<div class="price-box">
+													<span class="price">$95.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- End Single-Product -->
+								</div>
+							</div>
+
+						</div>
+						<!-- End Product -->
+					</div>
+					<!-- END PRODUCT-AREA -->
+				</div>
+				<!-- End Toch-Prond-Area -->
+			</div>
+		</div>
+	</div>
+	<!-- START BRAND-LOGO-AREA -->
+
+	<!-- END BRAND-LOGO-AREA -->
+	<!-- START SUBSCRIBE-AREA -->
+	<div class="subscribe-area">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-8 col-md-6 col-12">
+					<label>Sign Up for Our Newsletter:</label>
+					<div class="subscribe">
+						<form action="#">
+							<input type="text" placeholder="Enter Your E-mail">
+							<button type="submit">Subscribe</button>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="social-media">
+						<a href="#"><i class="fa fa-facebook fb"></i></a>
+						<a href="#"><i class="fa fa-google-plus gp"></i></a>
+						<a href="#"><i class="fa fa-twitter tt"></i></a>
+						<a href="#"><i class="fa fa-youtube yt"></i></a>
+						<a href="#"><i class="fa fa-linkedin li"></i></a>
+						<a href="#"><i class="fa fa-rss rs"></i></a>
 					</div>
 				</div>
 			</div>
-			<!-- START BRAND-LOGO-AREA -->
+		</div>
+	</div>
+	<!-- END SUBSCRIBE-AREA -->
+</section>
+<!-- END PAGE-CONTENT -->
+<!-- FOOTER-AREA START -->
 
-			<!-- END BRAND-LOGO-AREA -->
-			<!-- START SUBSCRIBE-AREA -->
-			<div class="subscribe-area">
-				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-lg-8 col-md-6 col-12">
-							<label>Sign Up for Our Newsletter:</label>
-							<div class="subscribe">
-								<form action="#">
-									<input type="text" placeholder="Enter Your E-mail">
-									<button type="submit">Subscribe</button>
+<!-- FOOTER-AREA END -->
+<!-- QUICKVIEW PRODUCT -->
+<div id="quickview-wrapper">
+   <!-- Modal -->
+   <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="modal-product">
+						<div class="product-images">
+							<div class="main-image images">
+								<img alt="#" src="{% static 'img/product/quickview-photo.jpg' %}{% static '"/>
+							</' %}div>
+						</div><!-- .product-images -->
+
+						<div class="product-info">
+							<h1>Aenean eu tristique</h1>
+							<div class="price-box-3">
+								<hr />
+								<div class="s-price-box">
+									<span class="new-price">$160.00</span>
+									<span class="old-price">$190.00</span>
+								</div>
+								<hr />
+							</div>
+							<a href="shop.html" class="see-all">See all features</a>
+							<div class="quick-add-to-cart">
+								<form method="post" class="cart">
+									<div class="numbers-row">
+										<input type="number" id="french-hens" value="3">
+									</div>
+									<button class="single_add_to_cart_button" type="submit">Add to cart</button>
 								</form>
 							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-12">
-							<div class="social-media">
-								<a href="#"><i class="fa fa-facebook fb"></i></a>
-								<a href="#"><i class="fa fa-google-plus gp"></i></a>
-								<a href="#"><i class="fa fa-twitter tt"></i></a>
-								<a href="#"><i class="fa fa-youtube yt"></i></a>
-								<a href="#"><i class="fa fa-linkedin li"></i></a>
-								<a href="#"><i class="fa fa-rss rs"></i></a>
+							<div class="quick-desc">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
 							</div>
-						</div>
-					</div>
-				</div>
-			</div>	
-			<!-- END SUBSCRIBE-AREA -->
-		</section>
-		<!-- END PAGE-CONTENT -->
-		<!-- FOOTER-AREA START -->
+							<div class="social-sharing">
+								<div class="widget widget_socialsharing_widget">
+									<h3 class="widget-title-modal">Share this product</h3>
+									<ul class="social-icons">
+										<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="fa fa-facebook"></i></a></li>
+										<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="fa fa-twitter"></i></a></li>
+										<li><a target="_blank" title="Pinterest" href="#" class="pinterest social-icon"><i class="fa fa-pinterest"></i></a></li>
+										<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="fa fa-google-plus"></i></a></li>
+										<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="fa fa-linkedin"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div><!-- .product-info -->
+					</div><!-- .modal-product -->
+				</div><!-- .modal-body -->
+			</div><!-- .modal-content -->
+		</div><!-- .modal-dialog -->
+   </div>
+   <!-- END Modal -->
+</div>
+<!-- END QUICKVIEW PRODUCT -->
 
-		<!-- FOOTER-AREA END -->	
-		<!-- QUICKVIEW PRODUCT -->
-		<div id="quickview-wrapper">
-		   <!-- Modal -->
-		   <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
-			    <div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						</div>
-						<div class="modal-body">
-							<div class="modal-product">
-								<div class="product-images">
-									<div class="main-image images">
-										<img alt="#" src="{% static 'img/product/quickview-photo.jpg' %}{% static '"/>
-									</' %}div>
-								</div><!-- .product-images -->
-
-								<div class="product-info">
-									<h1>Aenean eu tristique</h1>
-									<div class="price-box-3">
-										<hr />
-										<div class="s-price-box">
-											<span class="new-price">$160.00</span>
-											<span class="old-price">$190.00</span>
-										</div>
-										<hr />
-									</div>
-									<a href="shop.html" class="see-all">See all features</a>
-									<div class="quick-add-to-cart">
-										<form method="post" class="cart">
-											<div class="numbers-row">
-												<input type="number" id="french-hens" value="3">
-											</div>
-											<button class="single_add_to_cart_button" type="submit">Add to cart</button>
-										</form>
-									</div>
-									<div class="quick-desc">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
-									</div>
-									<div class="social-sharing">
-										<div class="widget widget_socialsharing_widget">
-											<h3 class="widget-title-modal">Share this product</h3>
-											<ul class="social-icons">
-												<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="fa fa-facebook"></i></a></li>
-												<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="fa fa-twitter"></i></a></li>
-												<li><a target="_blank" title="Pinterest" href="#" class="pinterest social-icon"><i class="fa fa-pinterest"></i></a></li>
-												<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="fa fa-google-plus"></i></a></li>
-												<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="fa fa-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div><!-- .product-info -->
-							</div><!-- .modal-product -->
-						</div><!-- .modal-body -->
-					</div><!-- .modal-content -->
-			    </div><!-- .modal-dialog -->
-		   </div>
-		   <!-- END Modal -->
-		</div>
-		<!-- END QUICKVIEW PRODUCT -->
-        
 {% endblock main %}

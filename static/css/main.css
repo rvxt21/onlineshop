@@ -11,7 +11,7 @@
    ========================================================================== */
 
 html {
-    color: #222;
+    color: #000000;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -25,12 +25,12 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #A42CD6;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #FF82A9;
     text-shadow: none;
 }
 
@@ -86,8 +86,8 @@ textarea {
 
 .browserupgrade {
     margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
+    background: #FFC0BE;
+    color: #000000;
     padding: 0.2em 0;
 }
 

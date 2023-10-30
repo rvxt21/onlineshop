@@ -1,346 +1,339 @@
 {%extends 'base.html' %}
 {% load static %}
 {% block main %}
-		<div class="category-slider-area">
+<div class="category-slider-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<!-- CATEGORY-MENU-LIST START -->
+				{% include 'left-menu-category.html' %}
+				<!-- END CATEGORY-MENU-LIST -->
+			</div>
+			<div class="col-lg-9">
+				<!-- slider -->
+				<div class="slider-area">
+					<div class="bend niceties preview-1">
+						<div id="ensign-nivoslider" class="slides">
+							<img src="https://tennismag.com.ua/upload/alexkova.rklite/52c/52cf27f9f8748e1add651a0dd2cce8a0.jpg" alt="Malias" title="#slider-direction-1"/>
+							<img src="https://tennismag.com.ua/upload/alexkova.rklite/ee4/ee46d2b48e49b97d0eee1082ffbdc80a.jpg" alt="Malias" title="#slider-direction-2"/>
+							<img src="https://tennismag.com.ua/upload/alexkova.rklite/1bd/1bdc95770e91db9a83dca2c02ac8eb83.jpg" alt="Malias" title="#slider-direction-3"/><!--
+							<img src="img/sliders/slider-1/bg4.jpg" alt="" title="#slider-direction-4"/>  -->
+						</div>
+						<!-- direction 1 -->
+						<div id="slider-direction-1" class="t-lfr slider-direction">
+							<div class="slider-progress"></div>
+							<!-- layer 1 -->
+							<div class="layer-1-1 ">
+								<h1 class="title1">Неймовірний дизайн, нова колекція</h1>
+							</div>
+
+						</div>
+						<!-- direction 2 -->
+						<div id="slider-direction-2" class="slider-direction">
+							<div class="slider-progress"></div>
+							<!-- layer 1 -->
+							<div class="layer-2-1">
+								<h1 class="title1">ТЕНІСНІ ТОВАРИ ДЛЯ УСІХ</h1>
+							</div>
+							<!-- layer 2 -->
+							<div class="layer-2-2">
+								<p class="title2">RODUCTS ARE EYE-CATCHING DESIGN. YOU CAN TAKE PHOTOS EVEN WHEN Y</p>
+							</div>
+							<!-- layer 3 -->
+							<div class="layer-2-3">
+								<a href="#" class="title3">Замов просто зараз</a>
+							</div>
+						</div>
+						<!-- direction 3 -->
+						<div id="slider-direction-3" class="slider-direction">
+							<div class="slider-progress"></div>
+							<!-- layer 1 -->
+							<div class="layer-3-1">
+								<h2 class="title1">КУПУЙ NIKE TENNIS</h2>
+							</div>
+							<!-- layer 2 -->
+							<div class="layer-3-2">
+								<h1 class="title2">НАЙКРАЩИЙ СЕРЕД ТОВАРІВ</h1>
+							</div>
+							<!-- layer 3 -->
+							 <div class="layer-3-3">
+								<p class="title3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+							</div>
+							<!-- layer 4 -->
+							<div class="layer-3-4">
+								<a href="#" class="title4">Купуй зараз</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- slider end-->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Category slider area End -->
+<!-- START PAGE-CONTENT -->
+<section class="page-content">
+	<!-- banner area Start -->
+	<div class="product-banner-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 ">
+					<div class="single-product-banner">
+						<a href="#"><img src="{% static 'img/banner/7.jpg' %}" alt="Product Banner"></a>
+						<div class="banner-text banner-1">
+							<h2>head phone 2015</h2>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 ">
+					<div class="single-product-banner">
+						<a href="#"><img src="{% static 'img/banner/8.jpg' %}" alt="Product Banner"></a>
+						<div class="banner-text banner-3">
+							<h2>
+								<span class="word-1">NQkia </span>
+								<span class="word-2">Lumia 888 </span>
+							</h2>
+							<h3>many Colors</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 ">
+					<div class="single-product-banner">
+						<a href="#"><img src="{% static 'img/banner/9.jpg' %}" alt="Product Banner"></a>
+						<div class="banner-text banner-2">
+						</div>
+						<div class="banner-text banner-4">
+							<h2>Htc <span>N8.</span></h2>
+							<h3>
+								<span class="word-1">many </span>
+								<span class="word-2">Colors</span>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- banner area End -->
+	<!-- Hot Deals area start -->
+		<div class="hot-deals-area">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3">
-						<!-- CATEGORY-MENU-LIST START -->
-						{% include 'left-menu-category.html' %}
-						<!-- END CATEGORY-MENU-LIST -->
-		            </div>
-	                <div class="col-lg-9">
-                		<!-- slider -->
-						<div class="slider-area">
-							<div class="bend niceties preview-1">
-								<div id="ensign-nivoslider" class="slides">	
-									<img src="https://tennismag.com.ua/upload/alexkova.rklite/52c/52cf27f9f8748e1add651a0dd2cce8a0.jpg" alt="Malias" title="#slider-direction-1"/>
-				 					<img src="https://tennismag.com.ua/upload/alexkova.rklite/ee4/ee46d2b48e49b97d0eee1082ffbdc80a.jpg" alt="Malias" title="#slider-direction-2"/>
-									<img src="https://tennismag.com.ua/upload/alexkova.rklite/1bd/1bdc95770e91db9a83dca2c02ac8eb83.jpg" alt="Malias" title="#slider-direction-3"/><!--
-									<img src="img/sliders/slider-1/bg4.jpg" alt="" title="#slider-direction-4"/>  -->     
-								</div>
-								<!-- direction 1 -->
-								<div id="slider-direction-1" class="t-lfr slider-direction">
-									<div class="slider-progress"></div>
-									<!-- layer 1 -->
-									<div class="layer-1-1 ">
-										<h1 class="title1">Неймовірний дизайн, нова колекція</h1>
-									</div>
-
-								</div>
-								<!-- direction 2 -->
-								<div id="slider-direction-2" class="slider-direction">
-									<div class="slider-progress"></div>
-									<!-- layer 1 -->
-									<div class="layer-2-1">
-										<h1 class="title1">WATERPROOF SMARTPHONE</h1>
-									</div>
-									<!-- layer 2 -->
-									<div class="layer-2-2">
-										<p class="title2">RODUCTS ARE EYE-CATCHING DESIGN. YOU CAN TAKE PHOTOS EVEN WHEN Y</p>
-									</div>
-									<!-- layer 3 -->
-									<div class="layer-2-3">
-										<a href="#" class="title3">Замов просто зараз</a>
-									</div>
-								</div>
-								<!-- direction 3 -->
-								<div id="slider-direction-3" class="slider-direction">
-									<div class="slider-progress"></div>
-									<!-- layer 1 -->
-									<div class="layer-3-1">
-										<h2 class="title1">BUY AIR LACOTE</h2>
-									</div>
-									<!-- layer 2 -->
-									<div class="layer-3-2">
-										<h1 class="title2">SUPER TABLET, SUPER GIFT</h1>
-									</div>
-									<!-- layer 3 -->
-									 <div class="layer-3-3">
-										<p class="title3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-									</div>
-									<!-- layer 4 -->
-									<div class="layer-3-4">
-										<a href="#" class="title4">shopping now</a>
-									</div>
-								</div>
-							</div>
+					<div class="col-lg-12">
+						<div class="area-title">
+							<h3 class="title-group border-red gfont-1">Hot Deals</h3>
 						</div>
-						<!-- slider end-->
-	                </div>
-	            </div>
+					</div>
+				</div>
+		   <div class="row">
+				{% for product in hot_deals_products %}
+				{% include 'hot-deals-product.html' %}
+				{% endfor %}
+		   </div>
+		</div>
+	</div>
+	<!-- Hot Deals area end -->
+	<!-- Banner area start -->
+	<div class="banner-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="single-product-banner">
+						<a href="#"><img src="https://media.istockphoto.com/id/471621500/ru/%D1%84%D0%BE%D1%82%D0%BE/%D1%82%D0%B5%D0%BD%D0%BD%D0%B8%D1%81%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D1%80%D1%82-%D1%81-%D1%82%D0%B5%D0%BD%D0%BD%D0%B8%D1%81%D0%BD%D1%8B%D0%B9-%D0%BC%D1%8F%D1%87-%D0%BA%D1%80%D1%83%D0%BF%D0%BD%D1%8B%D0%B9-%D0%BF%D0%BB%D0%B0%D0%BD.jpg?s=612x612&w=0&k=20&c=xD67AxrGW0CIbCQOj9j7Rjzipc20wpB1JgYoIlzopz8=" alt="Product Banner"></a>
+						<div class="banner-text banner-2">
+						</div>
+						<div class="banner-text banner-4">
+							<h2>Golden Week !! </h2>
+							<h3>
+								<span class="word-5">Знижки на всі бренди!</span>
+							</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="single-product-banner">
+						<a href="#"><img src="https://cdn.sportmaster.ru/upload/content/cmsgate/ru_sm/smprod/dip_content/2023/static/vidy_sporta/tennis/raketki.webp" width="570" height="120" alt="Product Banner" ></a>
+						<div class="banner-text banner-3">
+							<h2>
+								<span class="word-1">Найкраща ціна</span>
+							</h2>
+							<h2 class="word-6"></h2>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!-- Category slider area End -->
-		<!-- START PAGE-CONTENT -->
-		<section class="page-content">
-			<!-- banner area Start -->
-			<div class="product-banner-area">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-4 ">
-							<div class="single-product-banner">
-								<a href="#"><img src="{% static 'img/banner/7.jpg' %}" alt="Product Banner"></a>
-								<div class="banner-text banner-1">
-									<h2>head phone 2015</h2>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 ">
-							<div class="single-product-banner">
-								<a href="#"><img src="{% static 'img/banner/8.jpg' %}" alt="Product Banner"></a>
-								<div class="banner-text banner-3">
-									<h2>
-										<span class="word-1">NQkia </span>
-										<span class="word-2">Lumia 888 </span>
-									</h2>
-									<h3>many Colors</h3>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 ">
-							<div class="single-product-banner">
-								<a href="#"><img src="{% static 'img/banner/9.jpg' %}" alt="Product Banner"></a>
-								<div class="banner-text banner-2">
-								</div>
-								<div class="banner-text banner-4">
-									<h2>Htc <span>N8.</span></h2>
-									<h3>
-										<span class="word-1">many </span>
-										<span class="word-2">Colors</span>
-									</h3>
-								</div>
-							</div>
-						</div>
+	</div>
+	<!-- Banner area end -->
+	<!-- Product tab area start -->
+	<div class="product-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-12">
+					<!-- Start Product-Menu -->
+					<div class="product-menu style-2">
+						<ul class="nav">
+							<li><a class=" active" href="#display-1-1" role="tab" data-toggle="tab">Latest</a></li>
+							<li><a href="#display-1-2" role="tab" data-toggle="tab">Sell</a></li>
+							<li><a href="#display-1-3"  role="tab" data-toggle="tab">Random</a></li>
+						</ul>
 					</div>
+					<!-- End of product menu -->
 				</div>
 			</div>
-			<!-- banner area End -->
-			<!-- Hot Deals area start -->
-                <div class="hot-deals-area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="area-title">
-                                    <h3 class="title-group border-red gfont-1">Hot Deals</h3>
-                                </div>
-                            </div>
-                        </div>
-                   <div class="row">
-                        {% for product in products_main %}
-                        {% include 'hot-deals-product.html' %}
-                        {% endfor %}
-                   </div>
-                </div>
-            </div>
-            <!-- Hot Deals area end -->
-			<!-- Banner area start -->
-			<div class="banner-area">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="single-product-banner">
-								<a href="#"><img src="https://media.istockphoto.com/id/471621500/ru/%D1%84%D0%BE%D1%82%D0%BE/%D1%82%D0%B5%D0%BD%D0%BD%D0%B8%D1%81%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D1%80%D1%82-%D1%81-%D1%82%D0%B5%D0%BD%D0%BD%D0%B8%D1%81%D0%BD%D1%8B%D0%B9-%D0%BC%D1%8F%D1%87-%D0%BA%D1%80%D1%83%D0%BF%D0%BD%D1%8B%D0%B9-%D0%BF%D0%BB%D0%B0%D0%BD.jpg?s=612x612&w=0&k=20&c=xD67AxrGW0CIbCQOj9j7Rjzipc20wpB1JgYoIlzopz8=" alt="Product Banner"></a>
-								<div class="banner-text banner-2">
-								</div>
-								<div class="banner-text banner-4">
-									<h2>Golden Week !! </h2>
-									<h3>
-										<span class="word-5">Знижки на всі бренди!</span>
-									</h3>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="single-product-banner">
-								<a href="#"><img src="https://cdn.sportmaster.ru/upload/content/cmsgate/ru_sm/smprod/dip_content/2023/static/vidy_sporta/tennis/raketki.webp" width="570" height="120" alt="Product Banner" ></a>
-								<div class="banner-text banner-3">
-									<h2>
-										<span class="word-1">Найкраща ціна</span>
-									</h2>
-									<h2 class="word-6"></h2>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Banner area end -->
-			<!-- Product tab area start -->
-			<div class="product-area">
-				<div class="container">
-					<div class="row">
-						<div class="col-12 col-lg-12">
-							<!-- Start Product-Menu -->
-							<div class="product-menu style-2">
-								<ul class="nav">
-								    <li><a class=" active" href="#display-1-1" role="tab" data-toggle="tab">Latest</a></li>
-								    <li><a href="#display-1-2" role="tab" data-toggle="tab">Sell</a></li>
-								    <li><a href="#display-1-3"  role="tab" data-toggle="tab">Random</a></li>
-								</ul>
-							</div>
-							<!-- End of product menu -->
-						</div>
-					</div>
-					<!-- Start Product -->
-					<div class="product carosel-navigation-style-2">
-						<div class="tab-content">
-							<!-- Product = Speaker -->
-							<div role="tabpanel" class="tab-pane fade show active" id="display-1-1">
-                               <div class="row">
-									{% for product in products_latest %}
-                                    <div class="active-product-carosel-style-2">
-                                        <!-- Start Single-Product -->
-                                        <div class="col-12">
-                                            <div class="single-product style-2">
-                                                <div class="label_new">
-                                                    <span class="new">new</span>
-                                                </div>
-                                                <div class="sale-off">
-                                                    <span class="sale-percent">-55%</span>
-                                                </div>
-                                                <div class="product-img">
-                                                    <a href="{% url 'product' slug=product.slug %}">
-                                                        <img class="primary-img" src="{{ product.images.all.0.image.url }}" alt="Product">
-                                                        <img class="secondary-img" src="{{ product.images.all.1.image.url }}" alt="Product">
-                                                    </a>
-                                                </div>
-                                                <div class="product-description">
-                                                    <h5><a href="{% url 'product' slug=product.slug %}">{{ product.title }}</a></h5>
-                                                    <div class="price-box">
-                                                        <span class="price">{{ product.price }}₴</span>
-                                                        <span class="old-price">{% if product.old_price %}{{ product.old_price }}₴{% endif %}</span>
-                                                    </div>
-                                                    <span class="rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                    </span>
-                                                    <div class="hot-deals-button">
-                                                        <button><i class="fa fa-plus"></i> Add to Cart</button>
-                                                        <div class="hot-deals-button-2">
-                                                            <a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart-o"></i></a>
-                                                            <a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-signal"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+			<!-- Start Product -->
+			<div class="product carosel-navigation-style-2">
+				<div class="tab-content">
+					<!-- Product = Speaker -->
+					<div role="tabpanel" class="tab-pane fade show active" id="display-1-1">
+						<div class="row">
+							{% for product in latest_products %}
+							<div class="active-product-carosel-style-2">
+								<!-- Start Single-Product -->
+								<div class="col-12">
+									<div class="single-product style-2">
+										<div class="label_new">
+											<span class="new">new</span>
+										</div>
+										<div class="sale-off">
+											<span class="sale-percent">-55%</span>
+										</div>
+										<div class="product-img">
+											<a href="{% url 'product' slug=product.slug %}">
+												<img class="primary-img" src="{{ product.images.all.0.image.url }}" alt="Product">
+												<img class="secondary-img" src="{{ product.images.all.1.image.url }}" alt="Product">
+											</a>
+										</div>
+										<div class="product-description">
+											<h5><a href="{% url 'product' slug=product.slug %}">{{ product.title }}</a></h5>
+											<div class="price-box">
+												<span class="price">{{ product.price }}₴</span>
+												<span class="old-price">{% if product.old_price %}{{ product.old_price }}₴{% endif %}</span>
+											</div>
+											<span class="rating">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star-o"></i>
+											</span>
+											<div class="hot-deals-button">
+												<button><i class="fa fa-plus"></i> Add to Cart</button>
+												<div class="hot-deals-button-2">
+													<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart-o"></i></a>
+													<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-signal"></i></a>
+												</div>
+											</div>
+										</div>
 
-                                            </div>
-                                        </div>
-        <!-- End Single-Product --></div>
-								{% endfor %}
-					<!-- End Product -->
-				            </div>
-			            </div>
-                    </div>
-                </div>
+									</div>
+								</div>
+<!-- End Single-Product -->{% if forloop.counter|divisibleby:5 and not forloop.last %}
+							</div>
+						<div class="row">
+  						{% endif %}
+						{% endfor %}
+			<!-- End Product -->
+					</div>
+				</div>
 			</div>
 		</div>
-			<!-- Product tab area end -->
-			<!-- Blog area start -->
-			<div class="shop-blog-area">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="area-title">
-								<h3 class="title-group border-red gfont-1">RECENT POSTS</h3>
+	</div>
+</div>
+	<!-- Product tab area end -->
+	<!-- Blog area start -->
+	<div class="shop-blog-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="area-title">
+						<h3 class="title-group border-red gfont-1">RECENT POSTS</h3>
+					</div>
+				</div>
+			</div>
+			<!-- START RECENT-POSTS -->
+			<div class="recent-posts carosel-navigation-style-2 row">
+
+				<div class="active-recent-posts-style-2">
+					<!-- Start Single-Recent-Posts -->
+					<div class="col-12">
+						<div class="single-recent-posts">
+							<div class="recent-posts-photo">
+								<img src="img/posts/1.jpg" alt="Recent Posts">
+							</div>
+							<div class="recent-posts-text">
+								<h5><a href="#" class="recent-posts-title">swimwear for women</a></h5>
+								<span class="recent-posts-date">23/12/2015 | BootExpert Theme</span>
+								<p class="posts-short-brif">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+								<a href="#" class="posts-read-more">Read more ...</a>
 							</div>
 						</div>
 					</div>
-                    <!-- START RECENT-POSTS -->
-                    <div class="recent-posts carosel-navigation-style-2 row">
-                       
-                        <div class="active-recent-posts-style-2">
-                            <!-- Start Single-Recent-Posts -->
-                            <div class="col-12">
-                                <div class="single-recent-posts">
-                                    <div class="recent-posts-photo">
-                                        <img src="img/posts/1.jpg" alt="Recent Posts">
-                                    </div>
-                                    <div class="recent-posts-text">
-                                        <h5><a href="#" class="recent-posts-title">swimwear for women</a></h5>
-                                        <span class="recent-posts-date">23/12/2015 | BootExpert Theme</span>
-                                        <p class="posts-short-brif">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                                        <a href="#" class="posts-read-more">Read more ...</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single-Recent-Posts -->
-                            <!-- Start Single-Recent-Posts -->
-                            <div class="col-12">
-                                <div class="single-recent-posts">
-                                    <div class="recent-posts-photo">
-                                        <img src="img/posts/2.jpg" alt="Recent Posts">
-                                    </div>
-                                    <div class="recent-posts-text">
-                                        <h5><a href="#" class="recent-posts-title">swimwear for women</a></h5>
-                                        <span class="recent-posts-date">23/12/2015 | BootExpert Theme</span>
-                                        <p class="posts-short-brif">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                                        <a href="#" class="posts-read-more">Read more ...</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single-Recent-Posts -->
-                            <!-- Start Single-Recent-Posts -->
-                            <div class="col-12">
-                                <div class="single-recent-posts">
-                                    <div class="recent-posts-photo">
-                                        <img src="img/posts/3.jpg" alt="Recent Posts">
-                                    </div>
-                                    <div class="recent-posts-text">
-                                        <h5><a href="#" class="recent-posts-title">swimwear for women</a></h5>
-                                        <span class="recent-posts-date">23/12/2015 | BootExpert Theme</span>
-                                        <p class="posts-short-brif">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                                        <a href="#" class="posts-read-more">Read more ...</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single-Recent-Posts -->
-                            <!-- Start Single-Recent-Posts -->
-                            <div class="col-12">
-                                <div class="single-recent-posts">
-                                    <div class="recent-posts-photo">
-                                        <img src="img/posts/4.jpg" alt="Recent Posts">
-                                    </div>
-                                    <div class="recent-posts-text">
-                                        <h5><a href="#" class="recent-posts-title">swimwear for women</a></h5>
-                                        <span class="recent-posts-date">23/12/2015 | BootExpert Theme</span>
-                                        <p class="posts-short-brif">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                                        <a href="#" class="posts-read-more">Read more ...</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single-Recent-Posts -->
-                            <!-- Start Single-Recent-Posts -->
-                            <div class="col-12">
-                                <div class="single-recent-posts">
-                                    <div class="recent-posts-photo">
-                                        <img src="{% static 'img/posts/1.jpg' %}" alt="Recent Posts">
-                                    </div>
-                                    <div class="recent-posts-text">
-                                        <h5><a href="#" class="recent-posts-title">swimwear for women</a></h5>
-                                        <span class="recent-posts-date">23/12/2015 | BootExpert Theme</span>
-                                        <p class="posts-short-brif">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                                        <a href="#" class="posts-read-more">Read more ...</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single-Recent-Posts -->
-                        </div>
-                    </div>
-                    <!-- END RECENT-POSTS -->
+					<!-- End Single-Recent-Posts -->
+					<!-- Start Single-Recent-Posts -->
+					<div class="col-12">
+						<div class="single-recent-posts">
+							<div class="recent-posts-photo">
+								<img src="img/posts/2.jpg" alt="Recent Posts">
+							</div>
+							<div class="recent-posts-text">
+								<h5><a href="#" class="recent-posts-title">swimwear for women</a></h5>
+								<span class="recent-posts-date">23/12/2015 | BootExpert Theme</span>
+								<p class="posts-short-brif">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+								<a href="#" class="posts-read-more">Read more ...</a>
+							</div>
+						</div>
+					</div>
+					<!-- End Single-Recent-Posts -->
+					<!-- Start Single-Recent-Posts -->
+					<div class="col-12">
+						<div class="single-recent-posts">
+							<div class="recent-posts-photo">
+								<img src="img/posts/3.jpg" alt="Recent Posts">
+							</div>
+							<div class="recent-posts-text">
+								<h5><a href="#" class="recent-posts-title">swimwear for women</a></h5>
+								<span class="recent-posts-date">23/12/2015 | BootExpert Theme</span>
+								<p class="posts-short-brif">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+								<a href="#" class="posts-read-more">Read more ...</a>
+							</div>
+						</div>
+					</div>
+					<!-- End Single-Recent-Posts -->
+					<!-- Start Single-Recent-Posts -->
+					<div class="col-12">
+						<div class="single-recent-posts">
+							<div class="recent-posts-photo">
+								<img src="img/posts/4.jpg" alt="Recent Posts">
+							</div>
+							<div class="recent-posts-text">
+								<h5><a href="#" class="recent-posts-title">swimwear for women</a></h5>
+								<span class="recent-posts-date">23/12/2015 | BootExpert Theme</span>
+								<p class="posts-short-brif">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+								<a href="#" class="posts-read-more">Read more ...</a>
+							</div>
+						</div>
+					</div>
+					<!-- End Single-Recent-Posts -->
+					<!-- Start Single-Recent-Posts -->
+					<div class="col-12">
+						<div class="single-recent-posts">
+							<div class="recent-posts-photo">
+								<img src="{% static 'img/posts/1.jpg' %}" alt="Recent Posts">
+							</div>
+							<div class="recent-posts-text">
+								<h5><a href="#" class="recent-posts-title">swimwear for women</a></h5>
+								<span class="recent-posts-date">23/12/2015 | BootExpert Theme</span>
+								<p class="posts-short-brif">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+								<a href="#" class="posts-read-more">Read more ...</a>
+							</div>
+						</div>
+					</div>
+					<!-- End Single-Recent-Posts -->
 				</div>
 			</div>
-			<!-- Blog area end -->
-			<!-- START BRAND-LOGO-AREA -->
-
-			<!-- END BRAND-LOGO-AREA -->
-			<!-- START SUBSCRIBE-AREA -->
-
-		<!-- END PAGE-CONTENT -->
-		<!-- FOOTER-AREA START -->
-
-		<!-- FOOTER-AREA END -->
+			<!-- END RECENT-POSTS -->
+		</div>
+	</div>
 {% endblock main %}

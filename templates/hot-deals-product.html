@@ -42,9 +42,8 @@
                         </div>
                     </div>
                     <!-- End Single-hot-deals -->
-
-                    {% if forloop.counter|divisibleby:4 or forloop.last %}
-                        </div>
-                    {% endif %}
-                </div>
+            {% if forloop.counter|divisibleby:4 or forloop.last %}
             </div>
+        {% endif %}
+    </div>
+</div>

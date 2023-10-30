@@ -1,225 +1,223 @@
 {%extends 'base.html' %}
 {% load static %}
 {% block main %}
-		<!-- START PAGE-CONTENT -->
-		<section class="page-content">
-			<div class="container">
-	            <div class="row">
-					<div class="col-md-12">
-						<ul class="page-menu">
-							<li><a href="{% url 'index' %}}">Home</a></li>
-							<li class="active"><a href="#">Bestseller Product</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-3">
-						<!-- CATEGORY-MENU-LIST START -->
-	                    {% include 'left-menu-category.html' %}
-						<!-- END CATEGORY-MENU-LIST -->
-						<!-- shop-filter start -->
-						<div class="shop-filter">
-							<div class="area-title">
-								<h3 class="title-group gfont-1">Filters Products</h3>
-							</div>
-							<h4 class="shop-price-title">Price</h4>
-							<div class="info_widget">
-								<div class="price_filter">
-									<div id="slider-range"></div>
-									<div class="price_slider_amount">
-										<input type="text" id="amount" name="price"  placeholder="Add Your Price" />
-										<input type="submit"  value="Filter"/>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- shop-filter start -->
-						<!-- filter-by start -->
-						<div class="accordion_one">
-							<h4><a class="accordion-trigger" data-toggle="collapse" href="#divone">Color</a></h4>
-							<div id="divone" class="collapse in">
-								<div class="filter-menu">
-									<ul>
-										<li><a href="#">Black (2)</a></li>
-										<li><a href="#">Blue (2)</a></li>
-										<li><a href="#">Brown (3)</a></li>
-										<li><a href="#">Green (3)</a></li>
-										<li><a href="#">Orange (2)</a></li>
-										<li><a href="#">Pink (2)</a></li>
-										<li><a href="#">Red (11)</a></li>
-										<li><a href="#">Yellow (3)</a></li>
-									</ul>
-								</div>
-							</div>
-							<h4><a class="accordion-trigger" data-toggle="collapse" href="#div2">manufacture</a></h4>
-							<div id="div2" class="collapse in">
-								<div class="filter-menu">
-									<ul>
-										<li><a href="#">Chanel (2)</a></li>
-										<li><a href="#">Christian Dior (2)</a></li>
-										<li><a href="#">Ermenegildo (2)</a></li>
-										<li><a href="#">Ferragamo (1)</a></li>
-										<li><a href="#">Hermes (2)</a></li>
-										<li><a href="#">Louis Vuitton (3)</a></li>
-										<li><a href="#">Prada (1)</a></li>
-									</ul>
-								</div>
-							</div>
-							<h4><a class="accordion-trigger" data-toggle="collapse" href="#div3">Size</a></h4>
-							<div id="div3" class="collapse in">
-								<div class="filter-menu">
-									<ul>
-										<li><a href="#">L (1)</a></li>
-										<li><a href="#">M (5)</a></li>
-										<li><a href="#">S (7)</a></li>
-										<li><a href="#">XL (5)</a></li>
-										<li><a href="#">XXL (6)</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- filter-by end -->
-					</div>
-					<div class="col-lg-9 col-12">
-						<!-- START PRODUCT-BANNER -->
-						<div class="product-banner">
-							<div class="row">
-								<div class="col-12">
-									<div class="banner">
-										<a href="#"><img src="https://tennismag.com.ua/upload/alexkova.rklite/008/0083db92ba3ba2b1e7c107b799c3f671.jpg" alt="Product Banner"></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- END PRODUCT-BANNER -->
-						<!-- START PRODUCT-AREA -->
-						<div class="product-area">
-							<div class="row">
-								<div class="col-12">
-									<!-- Start Product-Menu -->
-									<div class="product-menu">
-										<div class="product-title">
-											<h3 class="title-group-3 gfont-1">{{ category.name }}</h3>
-										</div>
-									</div>
-									<div class="product-filter">
-										<ul class="nav">
-											<li class="list">
-												<a href="#display-1-1" role="tab" data-toggle="tab"></a>
-											</li>
-											<li class="grid">
-												<a class="active" href="#display-1-2" role="tab" data-toggle="tab"></a>
-											</li>
-										</ul>
-										<div class="sort">
-											<label>Sort By:</label>
-											<select>
-												<option value="#">Default</option>
-												<option value="#">Name (A - Z)</option>
-												<option value="#">Name (Z - A)</option>
-												<option value="#">Price (Low > High)</option>
-												<option value="#">Rating (Highest)</option>
-												<option value="#">Rating (Lowest)</option>
-												<option value="#">Name (A - Z)</option>
-												<option value="#">Model (Z - A))</option>
-												<option value="#">Model (A - Z)</option>
-											</select>
-										</div>
-										<div class="limit">
-											<label>Show:</label>
-											<select>
-												<option value="#">8</option>
-												<option value="#">16)</option>
-												<option value="#">24</option>
-												<option value="#">40</option>
-												<option value="#">80</option>
-												<option value="#">100</option>
-											</select>
-										</div>
-									</div>
-									<!-- End Product-Menu -->
-									<div class="clear"></div>
-								</div>
-							</div>
-							<div class="row">
-								{% for product in products %}
-								{% include 'catalog-product.html' %}
-								{% endfor %}
-							</div>
-							<!-- Start Pagination Area -->
-							{% include 'pagination.html' %}
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div><!-- END PRODUCT-AREA -->
-					</div>
-				</div>
-		</section>
-			<!-- START BRAND-LOGO-AREA -->
-
-			<!-- END BRAND-LOGO-AREA -->
-
-		<!-- FOOTER-AREA END -->
-		<!-- QUICKVIEW PRODUCT -->
-		<div id="quickview-wrapper">
-		   <!-- Modal -->
-		   <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
-			    <div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						</div>
-						<div class="modal-body">
-							<div class="modal-product">
-								<div class="product-images">
-									<div class="main-image images">
-										<img alt="#" src="{% static 'img/product/quickview-photo.jpg' %}"/>
-									</div>
-								</div><!-- .product-images -->
-
-								<div class="product-info">
-									<h1>Aenean eu tristique</h1>
-									<div class="price-box-3">
-										<hr />
-										<div class="s-price-box">
-											<span class="new-price">$160.00</span>
-											<span class="old-price">$190.00</span>
-										</div>
-										<hr />
-									</div>
-									<a href="shop.html" class="see-all">See all features</a>
-									<div class="quick-add-to-cart">
-										<form method="post" class="cart">
-											<div class="numbers-row">
-												<input type="number" id="french-hens" value="3">
-											</div>
-											<button class="single_add_to_cart_button" type="submit">Add to cart</button>
-										</form>
-									</div>
-									<div class="quick-desc">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
-									</div>
-									<div class="social-sharing">
-										<div class="widget widget_socialsharing_widget">
-											<h3 class="widget-title-modal">Share this product</h3>
-											<ul class="social-icons">
-												<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="fa fa-facebook"></i></a></li>
-												<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="fa fa-twitter"></i></a></li>
-												<li><a target="_blank" title="Pinterest" href="#" class="pinterest social-icon"><i class="fa fa-pinterest"></i></a></li>
-												<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="fa fa-google-plus"></i></a></li>
-												<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="fa fa-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div><!-- .product-info -->
-							</div><!-- .modal-product -->
-						</div><!-- .modal-body -->
-					</div><!-- .modal-content -->
-			    </div><!-- .modal-dialog -->
-		   </div>
-		   <!-- END Modal -->
+<!-- START PAGE-CONTENT -->
+<section class="page-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="page-menu">
+					<li><a href="{% url 'index' %}}">Home</a></li>
+					<li class="active"><a href="#">{{ category.name }}</a></li>
+				</ul>
+			</div>
 		</div>
-		<!-- END QUICKVIEW PRODUCT -->
+		<div class="row">
+			<div class="col-lg-3">
+				<!-- CATEGORY-MENU-LIST START -->
+				{% include 'left-menu-category.html' %}
+				<!-- END CATEGORY-MENU-LIST -->
+				<!-- shop-filter start -->
+				<div class="shop-filter">
+					<div class="area-title">
+						<h3 class="title-group gfont-1">Filters Products</h3>
+					</div>
+					<h4 class="shop-price-title">Price</h4>
+					<div class="info_widget">
+						<div class="price_filter">
+							<div id="slider-range"></div>
+							<div class="price_slider_amount">
+								<input type="text" id="amount" name="price"  placeholder="Add Your Price" />
+								<input type="submit"  value="Filter"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- shop-filter start -->
+				<!-- filter-by start -->
+				<div class="accordion_one">
+					<h4><a class="accordion-trigger" data-toggle="collapse" href="#divone">Color</a></h4>
+					<div id="divone" class="collapse in">
+						<div class="filter-menu">
+							<ul>
+								<li><a href="#">Black (2)</a></li>
+								<li><a href="#">Blue (2)</a></li>
+								<li><a href="#">Brown (3)</a></li>
+								<li><a href="#">Green (3)</a></li>
+								<li><a href="#">Orange (2)</a></li>
+								<li><a href="#">Pink (2)</a></li>
+								<li><a href="#">Red (11)</a></li>
+								<li><a href="#">Yellow (3)</a></li>
+							</ul>
+						</div>
+					</div>
+					<h4><a class="accordion-trigger" data-toggle="collapse" href="#div2">manufacture</a></h4>
+					<div id="div2" class="collapse in">
+						<div class="filter-menu">
+							<ul>
+								<li><a href="#">Chanel (2)</a></li>
+								<li><a href="#">Christian Dior (2)</a></li>
+								<li><a href="#">Ermenegildo (2)</a></li>
+								<li><a href="#">Ferragamo (1)</a></li>
+								<li><a href="#">Hermes (2)</a></li>
+								<li><a href="#">Louis Vuitton (3)</a></li>
+								<li><a href="#">Prada (1)</a></li>
+							</ul>
+						</div>
+					</div>
+					<h4><a class="accordion-trigger" data-toggle="collapse" href="#div3">Size</a></h4>
+					<div id="div3" class="collapse in">
+						<div class="filter-menu">
+							<ul>
+								<li><a href="#">L (1)</a></li>
+								<li><a href="#">M (5)</a></li>
+								<li><a href="#">S (7)</a></li>
+								<li><a href="#">XL (5)</a></li>
+								<li><a href="#">XXL (6)</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- filter-by end -->
+			</div>
+			<div class="col-lg-9 col-12">
+				<!-- START PRODUCT-BANNER -->
+				<div class="product-banner">
+					<div class="row">
+						<div class="col-12">
+							<div class="banner">
+								<a href="#"><img src="https://tennismag.com.ua/upload/alexkova.rklite/008/0083db92ba3ba2b1e7c107b799c3f671.jpg" alt="Product Banner"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END PRODUCT-BANNER -->
+				<!-- START PRODUCT-AREA -->
+				<div class="product-area">
+					<div class="row">
+						<div class="col-12">
+							<!-- Start Product-Menu -->
+							<div class="product-menu">
+								<div class="product-title">
+									<h3 class="title-group-3 gfont-1">{{ category.name }}</h3>
+								</div>
+							</div>
+							<div class="product-filter">
+								<ul class="nav">
+									<li class="list">
+										<a href="#display-1-1" role="tab" data-toggle="tab"></a>
+									</li>
+									<li class="grid">
+										<a class="active" href="#display-1-2" role="tab" data-toggle="tab"></a>
+									</li>
+								</ul>
+								<div class="sort">
+									<label>Sort By:</label>
+									<select>
+										<option value="#">Default</option>
+										<option value="#">Name (A - Z)</option>
+										<option value="#">Name (Z - A)</option>
+										<option value="#">Price (Low > High)</option>
+										<option value="#">Rating (Highest)</option>
+										<option value="#">Rating (Lowest)</option>
+										<option value="#">Name (A - Z)</option>
+										<option value="#">Model (Z - A))</option>
+										<option value="#">Model (A - Z)</option>
+									</select>
+								</div>
+								<div class="limit">
+									<label>Show:</label>
+									<select>
+										<option value="#">8</option>
+										<option value="#">16)</option>
+										<option value="#">24</option>
+										<option value="#">40</option>
+										<option value="#">80</option>
+										<option value="#">100</option>
+									</select>
+								</div>
+							</div>
+							<!-- End Product-Menu -->
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="row">
+						{% for product in products %}
+						{% include 'catalog-product.html' %}
+						{% endfor %}
+					</div>
+					<!-- Start Pagination Area -->
+					{% include 'pagination.html' %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- END PRODUCT-AREA -->
+			</div>
+		</div>
+</section>
+<!-- START BRAND-LOGO-AREA -->
+<!-- END BRAND-LOGO-AREA -->
+<!-- FOOTER-AREA END -->
+<!-- QUICKVIEW PRODUCT -->
+<div id="quickview-wrapper">
+   <!-- Modal -->
+   <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="modal-product">
+						<div class="product-images">
+							<div class="main-image images">
+								<img alt="#" src="{% static 'img/product/quickview-photo.jpg' %}"/>
+							</div>
+						</div><!-- .product-images -->
+
+						<div class="product-info">
+							<h1>Aenean eu tristique</h1>
+							<div class="price-box-3">
+								<hr />
+								<div class="s-price-box">
+									<span class="new-price">$160.00</span>
+									<span class="old-price">$190.00</span>
+								</div>
+								<hr />
+							</div>
+							<a href="shop.html" class="see-all">See all features</a>
+							<div class="quick-add-to-cart">
+								<form method="post" class="cart">
+									<div class="numbers-row">
+										<input type="number" id="french-hens" value="3">
+									</div>
+									<button class="single_add_to_cart_button" type="submit">Add to cart</button>
+								</form>
+							</div>
+							<div class="quick-desc">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
+							</div>
+							<div class="social-sharing">
+								<div class="widget widget_socialsharing_widget">
+									<h3 class="widget-title-modal">Share this product</h3>
+									<ul class="social-icons">
+										<li><a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="fa fa-facebook"></i></a></li>
+										<li><a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="fa fa-twitter"></i></a></li>
+										<li><a target="_blank" title="Pinterest" href="#" class="pinterest social-icon"><i class="fa fa-pinterest"></i></a></li>
+										<li><a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="fa fa-google-plus"></i></a></li>
+										<li><a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="fa fa-linkedin"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div><!-- .product-info -->
+					</div><!-- .modal-product -->
+				</div><!-- .modal-body -->
+			</div><!-- .modal-content -->
+		</div><!-- .modal-dialog -->
+   </div>
+   <!-- END Modal -->
+</div>
+<!-- END QUICKVIEW PRODUCT -->
 {% endblock main %}
