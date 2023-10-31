@@ -230,9 +230,9 @@ $('[data-toggle="tooltip"]').tooltip();
 	$(function() {
 	  $( "#slider-range" ).slider({
 	   range: true,
-	   min: 40,
-	   max: 600,
-	   values: [ 60, 570 ],
+	   min: 139,
+	   max: 6999,
+	   values: [ 139, 6999 ],
 	   slide: function( event, ui ) {
 		$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
 	   }

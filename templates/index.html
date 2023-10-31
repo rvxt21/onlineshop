@@ -197,7 +197,9 @@
 						<div class="product-img">
 							<a href="{% url 'product' slug=product.slug %}">
 								<img class="primary-img" src="{{ product.images.all.0.image.url }}" alt="Product">
+								{% if product.images.all.1 %}
 								<img class="secondary-img" src="{{ product.images.all.1.image.url }}" alt="Product">
+								{% endif %}
 							</a>
 						</div>
 						<div class="product-description">

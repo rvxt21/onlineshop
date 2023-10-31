@@ -10,5 +10,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('product/<slug:slug>/', ProductView.as_view(), name='product'),
     path('about/', AboutView.as_view(), name='about'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

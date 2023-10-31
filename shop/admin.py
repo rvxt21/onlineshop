@@ -5,7 +5,7 @@ from shop.models import Product, Category, Brand, Size, Image
 
 
 class BrandAdmin(admin.ModelAdmin):
-    list_display = ('name','total_products','picture')
+    list_display = ('name', 'total_products', 'picture')
     search_fields = ('name',)
 
     @staticmethod
@@ -60,7 +60,8 @@ class ProductAdmin(SummernoteModelAdmin):
     inlines = (ImageInlineAdmin,)
     summernote_fields = ('description',)
     readonly_fields = ('discount',)
-    list_display = ('title', 'price', 'old_price', 'discount', 'article','description')
+    list_display = ('title', 'price', 'old_price', 'discount', 'article',
+                    'description')
     search_fields = ('name', 'description')
     list_filter = ('brand',)
     list_editable = ('price', 'description')
@@ -73,7 +74,7 @@ class ProductAdmin(SummernoteModelAdmin):
                 ('description',),
                 ('price', 'old_price', 'discount'),
                 ('brand',),
-                ('categories','sizes'),
+                ('categories', 'sizes'),
                 ('characteristics',)
             )
         }),
