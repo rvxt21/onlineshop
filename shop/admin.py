@@ -81,7 +81,7 @@ class ProductAdmin(SummernoteModelAdmin):
     )
     
 
-admin.site.site_header = 'Online tennis shop Django'
+admin.site.site_header = 'Online tennis shop'
 admin.site.site_title = 'Tennis shop'
 admin.site.index_title = 'Welcome to Tennis shop'
 admin.site.register(Category, CategoryAdmin)

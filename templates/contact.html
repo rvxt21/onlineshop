@@ -44,11 +44,23 @@
 				<!-- Start Map area -->
 				<!-- End Map area -->
 				<!-- Start Contact-Message -->
+				{% if messages %}
+				{% for message in messages %}
+				{% if message.tags == 'success' %}
+				<div class="alert alert-success" role="alert">
+					{{ message }}
+				</div>
+				{% else %}
+				<div class="alert alert-warning" role="alert">
+					{{ message }}
+				</div>
+				{% endif %}
+				{% endfor %}
+				{% endif %}
 				<div class="contact-message">
 					<fieldset>
 						<form method="post" action="/contact-us/">
 							{% csrf_token %}
-							{{ from }}
 							<legend>Contact Form</legend>
 							<div class="form-group form-horizontal">
 								<div class="row">
